@@ -82,7 +82,7 @@ h1{text-shadow: 5px 5px 5px red }
 <div id="grad2" class="g2"></div>
 <h1>AULA DO RICARDO HTML5</h1>
 <p id="p1">TESTE GITHUB HTML5</p>
-<p id="p2">HTML5</p>
+<p id="p2">CURRICULO HTML5</p>
 <div id="trans" class="t"></div>
 </body>
 </html>
