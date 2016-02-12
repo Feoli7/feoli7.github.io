@@ -1,2 +1,88 @@
-# feoli7.github.io
-teste kkkkkkkkkkkkkkk
+<!DOCTYPE html>
+
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>AULA 001</title>
+<style id="jsbin-css">
+div {
+    width: 50px;
+    height: 50px;
+    background: black;
+}
+
+#teste1 {
+    width: 50px;
+    height: 50px;
+    background: blue;
+    border-radius: 50px;
+}
+
+.t2 {
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 20px 40px 60px 80px;
+}
+
+#bordering {
+    border: 10px solid transparent;
+    padding: 5px;
+    border-image: url(http://fotos.sapo.pt/9fA6GK4jiz6OhS4yIRpy/s320x240) 10 round;  
+}
+
+.bg {
+    width: 400px;
+    height: 100px;
+    background-image: url(http://www.animated-gifs.eu/avatars-100x100-smilies-little-crest/0011.gif);
+  background-position right bottom left top;
+  background-repeat: repeat, no-repeat; 
+  
+}
+
+#grad1 {
+    width: 200px;
+    height: 100px;
+    background: linear-gradient(to right, red, orange, yellow, blue, green, black)
+}
+
+#grad2 {
+    width: 200px;
+    height: 100px;
+    background: radial-gradient(circle, red, orange, yellow, blue, green, black)
+}
+
+h1{text-shadow: 5px 5px 5px red }
+
+#p1{background-color: rgba(255, 150, 150, 0.9); }
+#p2{background-color: cyan }
+
+#trans{
+    width: 100px;
+    height: 100px;
+    background: black;
+    transition: width 2s;
+}
+
+#trans:hover {
+    width: 200px;
+}
+
+</style>
+</head>
+<body>
+<div id="default" class="d"></div>
+<div id="teste1" class="t1"></div>
+<div id="teste2" class="t2"></div>
+<div id="bordering" class="border"></div>
+<div id="bg1" class="bg"></div>
+<div id="grad1" class="g1"></div>
+<div id="grad2" class="g2"></div>
+<h1>HTML5</h1>
+<p id="p1">HTML5</p>
+<p id="p2">HTML5</p>
+<div id="trans" class="t"></div>
+</body>
+</html>
