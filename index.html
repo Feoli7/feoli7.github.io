@@ -1,90 +1,158 @@
-<!DOCTYPE html>
-
-<meta name="robots" content="noindex">
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>AULA 001</title>
-<style id="jsbin-css">
-div {
-    width: 50px;
-    height: 50px;
-    background: black;
+<title> MY APPLE STORE </title>
+
+
+<script language="JavaScript">
+function simp() 
+{  var duma=parseFloat("3799.05"),nora=parseFloat("3599.10"),powa=parseFloat("3199.20"),
+       dumb=parseFloat("1139.05"),norb=parseFloat("1079.10"),powb=parseFloat("959.20"),
+       dumc=parseFloat("1566.55"),norc=parseFloat("1484.10"),powc=parseFloat("1319.20"),
+       dumd=parseFloat("217.55"),nord=parseFloat("206.10"),powd=parseFloat("183.20"),
+       totala=parseFloat("0.0"),totalb=parseFloat("0.0"),totalc=parseFloat("0.0"),totald=parseFloat("0.0"),result=parseFloat("0.0");
+
+   if(document.form.comprara.checked==true)
+     {    if(document.form.usera.value=="dum")          {totala=duma;}       
+          if(document.form.usera.value=="nor")          {totala=nora;}         
+          if(document.form.usera.value=="pow")          {totala=powa;}
+     }
+   if(document.form.comprarb.checked==true)
+     {    if(document.form.userb.value=="dum")          {totalb=dumb;}
+          if(document.form.userb.value=="nor")          {totalb=norb;}          
+          if(document.form.userb.value=="pow")          {totalb=powb;}
+     }
+   if(document.form.comprarc.checked==true)
+     {    if(document.form.userc.value=="dum")          {totalc=dumc;}          
+          if(document.form.userc.value=="nor")          {totalc=norc;}          
+          if(document.form.userc.value=="pow")          {totalc=powc;}
+     }
+   if(document.form.comprard.checked==true)
+     {    if(document.form.userd.value=="dum")          {totald=dumd;}          
+          if(document.form.userd.value=="nor")          {totald=nord;}          
+          if(document.form.userd.value=="pow")          {totald=powd;}
+     }
+result=totala+totalb+totalc+totald;
+result=result.toFixed(2);
+alert("Valor total da compra = R$ "+result);
+
 }
+</script>
 
-#teste1 {
-    width: 50px;
-    height: 50px;
-    background: blue;
-    border-radius: 50px;
+
+<script language="JavaScript">
+function buy() 
+{  var name,vparc=parseInt("0.0"), parcelas=parseInt("0.0"), 
+       duma=parseFloat("3799.05"),nora=parseFloat("3599.10"),powa=parseFloat("3199.20"),
+       dumb=parseFloat("1139.05"),norb=parseFloat("1079.10"),powb=parseFloat("959.20"),
+       dumc=parseFloat("1566.55"),norc=parseFloat("1484.10"),powc=parseFloat("1319.20"),
+       dumd=parseFloat("217.55"),nord=parseFloat("206.10"),powd=parseFloat("183.20"),
+       totala=parseFloat("0.0"),totalb=parseFloat("0.0"),totalc=parseFloat("0.0"),totald=parseFloat("0.0"),result=parseFloat("0.0"),resultf=parseFloat("0.0");
+
+   if(document.form.comprara.checked==true)
+     {    if(document.form.usera.value=="dum")          {totala=duma;}       
+          if(document.form.usera.value=="nor")          {totala=nora;}         
+          if(document.form.usera.value=="pow")          {totala=powa;}
+     }
+   if(document.form.comprarb.checked==true)
+     {    if(document.form.userb.value=="dum")          {totalb=dumb;}
+          if(document.form.userb.value=="nor")          {totalb=norb;}          
+          if(document.form.userb.value=="pow")          {totalb=powb;}
+     }
+   if(document.form.comprarc.checked==true)
+     {    if(document.form.userc.value=="dum")          {totalc=dumc;}          
+          if(document.form.userc.value=="nor")          {totalc=norc;}          
+          if(document.form.userc.value=="pow")          {totalc=powc;}
+     }
+   if(document.form.comprard.checked==true)
+     {    if(document.form.userd.value=="dum")          {totald=dumd;}          
+          if(document.form.userd.value=="nor")          {totald=nord;}          
+          if(document.form.userd.value=="pow")          {totald=powd;}
+     }
+result=totala+totalb+totalc+totald;
+
+if(document.form.parc.value=="i") {resultf=result/1.0 ;parcelas=1; }
+if(document.form.parc.value=="ii") {resultf=result/2.0;parcelas=2; }
+if(document.form.parc.value=="iii") {resultf=result/3.0;parcelas=3; }
+if(document.form.parc.value=="vi") {resultf=result/4.0;parcelas=4; }
+if(document.form.parc.value=="v") {resultf=result/5.0;parcelas=5; }
+if(document.form.parc.value=="vi") {resultf=result/6.0;parcelas=6; }
+if(document.form.parc.value=="vii") {resultf=result/7.0;parcelas=7; }
+if(document.form.parc.value=="viii") {resultf=result/8.0;parcelas=8; }
+if(document.form.parc.value=="ix") {resultf=result/9.0;parcelas=9; }
+if(document.form.parc.value=="x") {resultf=result/10.0;parcelas=10; }
+
+
+name=(document.form.name.value);
+resultf=resultf.toFixed(2);
+alert("Prezado "+name+"\nSeguem os dados da sua compra:\nTotal da compra = R$"+result+"\nNº de parcelas:"+parcelas+"\nValor de cada parcela: R$"+resultf);
+
 }
+</script>
 
-.t2 {
-    width: 50px;
-    height: 50px;
-    background: red;
-    border-radius: 20px 40px 60px 80px;
-}
 
-#bordering {
-    border: 10px solid transparent;
-    padding: 5px;
-    border-image: url(http://fotos.sapo.pt/9fA6GK4jiz6OhS4yIRpy/s320x240) 10 round;  
-}
-
-.bg {
-    width: 400px;
-    height: 100px;
-    background-image: url(http://www.animated-gifs.eu/avatars-100x100-smilies-little-crest/0011.gif);
-  background-position right bottom left top;
-  background-repeat: repeat, no-repeat; 
-  
-}
-
-#grad1 {
-    width: 200px;
-    height: 100px;
-    background: linear-gradient(to right, red, orange, yellow, blue, green, black)
-}
-
-#grad2 {
-    width: 200px;
-    height: 100px;
-    background: radial-gradient(circle, red, orange, yellow, blue, green, black)
-}
-
-h1{text-shadow: 5px 5px 5px red }
-
-#p1{background-color: rgba(255, 150, 150, 0.9); }
-#p2{background-color: cyan }
-
-#trans{
-    width: 100px;
-    height: 100px;
-    background: black;
-    transition: width 2s;
-}
-
-#trans:hover {
-    width: 1000px;
-}
-
-</style>
 </head>
-<body>
-<div id="default" class="d"></div>
-<div id="teste1" class="t1"></div>
-<div id="teste2" class="t2"></div>
-<div id="bordering" class="border"></div>
-<div id="bg1" class="bg"></div>
-<div id="grad1" class="g1"></div>
-<div id="grad2" class="g2"></div>
-<h3>LINKS</h3>
-<br><a href="pg.html">PAGINA</a><br>
-<h1>AULA DO RICARDO HTML5</h1>
-<p id="p1">TESTE GITHUB HTML5</p>
-<p id="p2">CURRICULO HTML5</p>
-<div id="trans" class="t"></div>
+
+<body bgcolor="ghostwhite">
+<h1 align="center"><font face="arial"> My Apple Store </font></h1>
+<p>
+<form name="form" method="post">
+<table align="center" width="800" border="1">
+<tr>
+   <td align="center" bgcolor="white"><img src="f1.jpg"></td>
+   <td align="center" bgcolor="white"><img src="f2.jpg"></td>
+   <td align="center" bgcolor="white"><img src="f3.jpg"></td>
+   <td align="center" bgcolor="white"><img src="f4.jpg"></td>
+</tr>
+<tr>
+   <td bgcolor="ghostwhite"> Tipo de usuário: <select name="usera">
+                            <OPTION value="dum">Dummy
+                            <OPTION value="nor">Normal
+                            <OPTION value="pow">Power
+                            </select>
+                            <p><input type="checkbox" name="comprara"> Comprar
+                            <p><input type="button" name="simula" value="Simular Pagamento" onClick="simp()"></td>
+   <td bgcolor="ghostwhite"> Tipo de usuário: <select name="userb">
+                            <OPTION value="dum">Dummy
+                            <OPTION value="nor">Normal
+                            <OPTION value="pow">Power
+                            </select>
+                            <p><input type="checkbox" name="comprarb"> Comprar
+                            <p><input type="button" name="simulb" value="Simular Pagamento" onClick="simp()"></td>
+   <td bgcolor="ghostwhite"> Tipo de usuário: <select name="userc">
+                            <OPTION value="dum">Dummy
+                            <OPTION value="nor">Normal
+                            <OPTION value="pow">Power
+                            </select>
+                            <p><input type="checkbox" name="comprarc"> Comprar
+                            <p><input type="button" name="simulc" value="Simular Pagamento" onClick="simp()"></td>
+   <td bgcolor="ghostwhite"> Tipo de usuário: <select name="userd">
+                            <OPTION value="dum">Dummy
+                            <OPTION value="nor">Normal
+                            <OPTION value="pow">Power
+                            </select>
+                            <p><input type="checkbox" name="comprard"> Comprar
+                            <p><input type="button" name="simuld" value="Simular Pagamento" onClick="simp()"></td>
+</tr>
+<th bgcolor="ghostwhite" colspan="4">
+<div align="left"><p><p><p>Nome: <input type="TEXT" name="name" size="50" value="------------------------"></div>
+<div align="left">Nº do Cartão de Crédito: <input type="TEXT" name="ncc1" size="40" value="------------------------"></div>
+<div align="left">Nº de Parcelas: <select name="parc">
+                    <OPTION value="i">1
+                    <OPTION value="ii">2
+                    <OPTION value="iii">3
+                    <OPTION value="iv">4
+                    <OPTION value="v">5
+                    <OPTION value="vi">6
+                    <OPTION value="vii">7
+                    <OPTION value="viii">8
+                    <OPTION value="ix">9
+                    <OPTION value="x">10
+                    </select>                                                                                
+                    <input type="button" name="but" value="Fechar Compra" onClick="buy()"></div>
+</th>
+</table>
+</form>
+<h3 align="center">IMWPB02SI - FELIPE DE OLIVEIRA VOGEL PENNA - SI1N</h3>
 </body>
-</html>
+<html>
