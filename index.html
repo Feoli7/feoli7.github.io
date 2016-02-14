@@ -1,159 +1,111 @@
-<html>
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
 
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/jigoxan/4/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by anonymous (http://jsbin.com/yesacatoga/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+
+<meta name="robots" content="noindex">
+<html>
 <head>
-<title> MY APPLE STORE </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>AULA 001</title>
+<style id="jsbin-css">
 
+</style>
+<style id="jsbin-css">
 
-<script language="JavaScript">
-function simp() 
-{  var duma=parseFloat("3799.05"),nora=parseFloat("3599.10"),powa=parseFloat("3199.20"),
-       dumb=parseFloat("1139.05"),norb=parseFloat("1079.10"),powb=parseFloat("959.20"),
-       dumc=parseFloat("1566.55"),norc=parseFloat("1484.10"),powc=parseFloat("1319.20"),
-       dumd=parseFloat("217.55"),nord=parseFloat("206.10"),powd=parseFloat("183.20"),
-       totala=parseFloat("0.0"),totalb=parseFloat("0.0"),totalc=parseFloat("0.0"),totald=parseFloat("0.0"),result=parseFloat("0.0");
-
-   if(document.form.comprara.checked==true)
-     {    if(document.form.usera.value=="dum")          {totala=duma;}       
-          if(document.form.usera.value=="nor")          {totala=nora;}         
-          if(document.form.usera.value=="pow")          {totala=powa;}
-     }
-   if(document.form.comprarb.checked==true)
-     {    if(document.form.userb.value=="dum")          {totalb=dumb;}
-          if(document.form.userb.value=="nor")          {totalb=norb;}          
-          if(document.form.userb.value=="pow")          {totalb=powb;}
-     }
-   if(document.form.comprarc.checked==true)
-     {    if(document.form.userc.value=="dum")          {totalc=dumc;}          
-          if(document.form.userc.value=="nor")          {totalc=norc;}          
-          if(document.form.userc.value=="pow")          {totalc=powc;}
-     }
-   if(document.form.comprard.checked==true)
-     {    if(document.form.userd.value=="dum")          {totald=dumd;}          
-          if(document.form.userd.value=="nor")          {totald=nord;}          
-          if(document.form.userd.value=="pow")          {totald=powd;}
-     }
-result=totala+totalb+totalc+totald;
-result=result.toFixed(2);
-alert("Valor total da compra = R$ "+result);
-
+</style>
+<style id="jsbin-css">
+div {
+    width: 800px;
+    height: 50px;
 }
-</script>
 
 
-<script language="JavaScript">
-function buy() 
-{  var name,vparc=parseInt("0.0"), parcelas=parseInt("0.0"), 
-       duma=parseFloat("3799.05"),nora=parseFloat("3599.10"),powa=parseFloat("3199.20"),
-       dumb=parseFloat("1139.05"),norb=parseFloat("1079.10"),powb=parseFloat("959.20"),
-       dumc=parseFloat("1566.55"),norc=parseFloat("1484.10"),powc=parseFloat("1319.20"),
-       dumd=parseFloat("217.55"),nord=parseFloat("206.10"),powd=parseFloat("183.20"),
-       totala=parseFloat("0.0"),totalb=parseFloat("0.0"),totalc=parseFloat("0.0"),totald=parseFloat("0.0"),result=parseFloat("0.0"),resultf=parseFloat("0.0");
+#www1{
+  background-image: url(http://www.colegiopadrecorrea.com.br/imagens/icon_aluno.png);
+  background-size: 70px 50px;
+  background-position left;
+  background-repeat: no-repeat;
+  color: white;
+   background-color: black;
+  text-shadow: 5px 5px 5px gray }
 
-   if(document.form.comprara.checked==true)
-     {    if(document.form.usera.value=="dum")          {totala=duma;}       
-          if(document.form.usera.value=="nor")          {totala=nora;}         
-          if(document.form.usera.value=="pow")          {totala=powa;}
-     }
-   if(document.form.comprarb.checked==true)
-     {    if(document.form.userb.value=="dum")          {totalb=dumb;}
-          if(document.form.userb.value=="nor")          {totalb=norb;}          
-          if(document.form.userb.value=="pow")          {totalb=powb;}
-     }
-   if(document.form.comprarc.checked==true)
-     {    if(document.form.userc.value=="dum")          {totalc=dumc;}          
-          if(document.form.userc.value=="nor")          {totalc=norc;}          
-          if(document.form.userc.value=="pow")          {totalc=powc;}
-     }
-   if(document.form.comprard.checked==true)
-     {    if(document.form.userd.value=="dum")          {totald=dumd;}          
-          if(document.form.userd.value=="nor")          {totald=nord;}          
-          if(document.form.userd.value=="pow")          {totald=powd;}
-     }
-result=totala+totalb+totalc+totald;
+#www2{
+  background-image: url(http://www.starlog.com.br/wp-content/uploads/2015/07/icone_cert.png);
+  background-size: 70px 50px;
+  background-position left;
+  background-repeat: no-repeat;
+  color: white;
+   background-color: black;
+  text-shadow: 5px 5px 5px gray }
 
-if(document.form.parc.value=="i") {resultf=result/1.0 ;parcelas=1; }
-if(document.form.parc.value=="ii") {resultf=result/2.0;parcelas=2; }
-if(document.form.parc.value=="iii") {resultf=result/3.0;parcelas=3; }
-if(document.form.parc.value=="vi") {resultf=result/4.0;parcelas=4; }
-if(document.form.parc.value=="v") {resultf=result/5.0;parcelas=5; }
-if(document.form.parc.value=="vi") {resultf=result/6.0;parcelas=6; }
-if(document.form.parc.value=="vii") {resultf=result/7.0;parcelas=7; }
-if(document.form.parc.value=="viii") {resultf=result/8.0;parcelas=8; }
-if(document.form.parc.value=="ix") {resultf=result/9.0;parcelas=9; }
-if(document.form.parc.value=="x") {resultf=result/10.0;parcelas=10; }
+#www3{
+  background-image: url(http://a1.mzstatic.com/us/r30/Purple1/v4/59/4a/4d/594a4d16-0422-55e8-5b9a-a6e16375987a/icon256.png);
+  background-size: 60px 50px;
+  background-position left;
+  background-repeat: no-repeat;
+  color: white;
+   background-color: black;
+  text-shadow: 5px 5px 5px gray }
 
+#p1{background-color: rgba(255, 150, 150, 0.9); }
+#p2{background-color: cyan }
 
-name=(document.form.name.value);
-resultf=resultf.toFixed(2);
-alert("Prezado "+name+"\nSeguem os dados da sua compra:\nTotal da compra = R$"+result+"\nNº de parcelas:"+parcelas+"\nValor de cada parcela: R$"+resultf);
-
+#trans{
+    width: 100px;
+    height: 100px;
+    background: black;
+    transition: width 2s;
 }
-</script>
 
+#trans:hover {
+    width: 200px;
+}
 
+</style>
 </head>
-
-<body bgcolor="ghostwhite">
-<h1 align="center"><font face="arial"> My Apple Store </font></h1>
-<p>
-<form name="form" method="post">
-<table align="center" width="800" border="1">
+<body>
+<table align="center" width="800" border="0">
 <tr>
-   <td align="center" bgcolor="white"><img src="f1.jpg"></td>
-   <td align="center" bgcolor="white"><img src="f2.jpg"></td>
-   <td align="center" bgcolor="white"><img src="f3.jpg"></td>
-   <td align="center" bgcolor="white"><img src="f4.jpg"></td>
+    <td><div id="default" class="d">
+Graduando em Sistemas de Informação (2012 - 2016). Tem experiência na área de Ciência da Computação, com ênfase em Otimização, IA e Sistemas de Apoio à Tomada de Decisão, como projetos de datawarehouse e OLAP. Atuou como coordenador de cursos superiores em Computação e Sistemas</div></td>
+<tr>
+    <td><h1 id="www1" class="www1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Acadêmico</h1>Graduando em Sistemas de Informação 2012 - 2016 
+</br><a href="http://www.uvv.br/">Universidade Vila Velha.</a>
+</td>
+    <td><p id="p1">HTML5</p></td>
 </tr>
 <tr>
-   <td bgcolor="ghostwhite"> Tipo de usuário: <select name="usera">
-                            <OPTION value="dum">Dummy
-                            <OPTION value="nor">Normal
-                            <OPTION value="pow">Power
-                            </select>
-                            <p><input type="checkbox" name="comprara"> Comprar
-                            <p><input type="button" name="simula" value="Simular Pagamento" onClick="simp()"></td>
-   <td bgcolor="ghostwhite"> Tipo de usuário: <select name="userb">
-                            <OPTION value="dum">Dummy
-                            <OPTION value="nor">Normal
-                            <OPTION value="pow">Power
-                            </select>
-                            <p><input type="checkbox" name="comprarb"> Comprar
-                            <p><input type="button" name="simulb" value="Simular Pagamento" onClick="simp()"></td>
-   <td bgcolor="ghostwhite"> Tipo de usuário: <select name="userc">
-                            <OPTION value="dum">Dummy
-                            <OPTION value="nor">Normal
-                            <OPTION value="pow">Power
-                            </select>
-                            <p><input type="checkbox" name="comprarc"> Comprar
-                            <p><input type="button" name="simulc" value="Simular Pagamento" onClick="simp()"></td>
-   <td bgcolor="ghostwhite"> Tipo de usuário: <select name="userd">
-                            <OPTION value="dum">Dummy
-                            <OPTION value="nor">Normal
-                            <OPTION value="pow">Power
-                            </select>
-                            <p><input type="checkbox" name="comprard"> Comprar
-                            <p><input type="button" name="simuld" value="Simular Pagamento" onClick="simp()"></td>
+    <td><h1 id="www2" class="www2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cursos</h1>
+Possui mestrado em Informática pela Universidade Federal do Espírito Santo (2002). Tem experiência na área de Ciência da Computação, com ênfase em Otimização, IA e Sistemas de Apoio à Tomada de Decisão, como projetos de datawarehouse e OLAP. Atuou como coordenador de cursos superiores em Computação e Sistemas, e atualmente é sócio-diretor de uma empresa de desenvolvimento de software no estado do ES<p id="p1">HTML5</p></td>
+    <td><p id="p1">HTML5</p></td>
 </tr>
-<th bgcolor="ghostwhite" colspan="4">
-<div align="left"><p><p><p>Nome: <input type="TEXT" name="name" size="50" value="------------------------"></div>
-<div align="left">Nº do Cartão de Crédito: <input type="TEXT" name="ncc1" size="40" value="------------------------"></div>
-<div align="left">Nº de Parcelas: <select name="parc">
-                    <OPTION value="i">1
-                    <OPTION value="ii">2
-                    <OPTION value="iii">3
-                    <OPTION value="iv">4
-                    <OPTION value="v">5
-                    <OPTION value="vi">6
-                    <OPTION value="vii">7
-                    <OPTION value="viii">8
-                    <OPTION value="ix">9
-                    <OPTION value="x">10
-                    </select>                                                                                
-                    <input type="button" name="but" value="Fechar Compra" onClick="buy()"></div>
-</th>
+<tr>
+    <td><h1 id="www3" class="www3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Endereço Profissional</h1>
+<a href="http://www.uvv.br/">Universidade Vila Velha.</a>
+</br>Rua Comissário José Dantas de Melo, 21, Boa Vista, 29102-770 - Vila Velha, ES - Brasil, </br>Telefone: (027) 99914-8998.
+    <td><p id="p1">HTML5</p></td>
+</tr>
+<tr>
+    <td><p id="p2">HTML5</p></td>
+    <td><div id="trans" class="t"></div></td>
+  </th>
 </table>
-</form>
-<h3 align="center">IMWPB02SI - FELIPE DE OLIVEIRA VOGEL PENNA - SI1N</h3>
-<br><a href="pg.html" align="center">PAGINA</a>
 </body>
-<html>
+</html>
