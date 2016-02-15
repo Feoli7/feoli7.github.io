@@ -3,7 +3,7 @@
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2016 by Feoli7 (http://jsbin.com/jigoxan/4/edit)
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/jigoxan/6/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
@@ -32,45 +32,60 @@ Released under the MIT license: http://jsbin.mit-license.org
 </style>
 <style id="jsbin-css">
 div {
-    width: 800px;
+    width: 80px;
     height: 50px;
 }
 
+#menu1{
+  background-image: url(http://icons.iconarchive.com/icons/visualpharm/must-have/256/User-icon.png);
+  background-size: 70px 50px;
+  background-position left;
+  background-repeat: no-repeat;
+  color: white;
+  background-color: black;
+  text-shadow: 5px 5px 5px gray }
 
-#www1{
+#menu2{
   background-image: url(http://www.colegiopadrecorrea.com.br/imagens/icon_aluno.png);
   background-size: 70px 50px;
   background-position left;
   background-repeat: no-repeat;
   color: white;
-   background-color: black;
+  background-color: black;
   text-shadow: 5px 5px 5px gray }
 
-#www2{
+#menu3{
   background-image: url(http://www.starlog.com.br/wp-content/uploads/2015/07/icone_cert.png);
   background-size: 70px 50px;
   background-position left;
   background-repeat: no-repeat;
   color: white;
-   background-color: black;
+  background-color: black;
   text-shadow: 5px 5px 5px gray }
 
-#www3{
-  background-image: url(http://a1.mzstatic.com/us/r30/Purple1/v4/59/4a/4d/594a4d16-0422-55e8-5b9a-a6e16375987a/icon256.png);
-  background-size: 60px 50px;
+#menu4{
+  background-image: url(http://alberto.cim.br/gallery/contact-us-icon1.png);
+  background-size: 60px 38px;
   background-position left;
   background-repeat: no-repeat;
   color: white;
-   background-color: black;
+  background-color: black;
   text-shadow: 5px 5px 5px gray }
 
-#p1{background-color: rgba(255, 150, 150, 0.9); }
-#p2{background-color: cyan }
+#p1{background-color: rgba(255, 255, 200, 0.9); }
+#p2{background-color: rgba(255, 200, 190, 0.9); }
+
+#card{
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: width 2s;
+}
 
 #trans{
     width: 100px;
     height: 100px;
-    background: black;
+    background:red;
     transition: width 2s;
 }
 
@@ -81,31 +96,62 @@ div {
 </style>
 </head>
 <body>
-<table align="center" width="800" border="0">
+<table width="1200" border="0" align="center"> 
 <tr>
-    <td><div id="default" class="d">
-Graduando em Sistemas de Informação (2012 - 2016). Tem experiência na área de Ciência da Computação, com ênfase em Otimização, IA e Sistemas de Apoio à Tomada de Decisão, como projetos de datawarehouse e OLAP. Atuou como coordenador de cursos superiores em Computação e Sistemas</div></td>
-<tr>
-    <td><h1 id="www1" class="www1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Acadêmico</h1>Graduando em Sistemas de Informação 2012 - 2016 
-</br><a href="http://www.uvv.br/">Universidade Vila Velha.</a>
+<td><h1 id="menu1" class="menu1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sobre</h1>
+Graduando em Sistemas de Informação (2012 - 2016). Tem experiência na área de Ciência da Computação, com ênfase em Otimização, IA e Sistemas de Apoio à Tomada de Decisão, como projetos de datawarehouse e OLAP. Atuou como coordenador de cursos superiores em Computação e Sistemas
 </td>
-    <td><p id="p1">HTML5</p></td>
 </tr>
-<tr>
-    <td><h1 id="www2" class="www2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cursos</h1>
-Possui mestrado em Informática pela Universidade Federal do Espírito Santo (2002). Tem experiência na área de Ciência da Computação, com ênfase em Otimização, IA e Sistemas de Apoio à Tomada de Decisão, como projetos de datawarehouse e OLAP. Atuou como coordenador de cursos superiores em Computação e Sistemas, e atualmente é sócio-diretor de uma empresa de desenvolvimento de software no estado do ES<p id="p1">HTML5</p></td>
-    <td><p id="p1">HTML5</p></td>
-</tr>
-<tr>
-    <td><h1 id="www3" class="www3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Endereço Profissional</h1>
+
+<tr><td>
+<h1 id="menu2" class="menu2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Formação Acadêmica</h1>
+<p id="p2"><b>Curso de Formação de Soldados (2009 - 2010) - 
+<a href="http://www.pm.es.gov.br/">Polícia Militar ES</a></p><b>
+<p id="p2">Graduando em Sistemas de Informação (2012 - 2016) - 
 <a href="http://www.uvv.br/">Universidade Vila Velha.</a>
-</br>Rua Comissário José Dantas de Melo, 21, Boa Vista, 29102-770 - Vila Velha, ES - Brasil, </br>Telefone: (027) 99914-8998.
-    <td><p id="p1">HTML5</p></td>
+</p></b></td>
+<td rowspan="2"><div></div></td>
 </tr>
+
 <tr>
-    <td><p id="p2">HTML5</p></td>
-    <td><div id="trans" class="t"></div></td>
-  </th>
+<td><h1 id="menu3" class="menu3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cursos Complementares</h1>
+<table align="center" width="1100" border="0"> 
+<tbody><tr>
+<td>
+<p id="p1"><b></b></p><b>
+<p id="p1">Aplicações Java Mobile (2015) - EV BRADESCO</p>
+<p id="p1">Comunicação Visual (2006) - DATA CONTROL</p>
+<p id="p1">Crimes Cibernéticos (2014) - SENASP</p>
+<p id="p1">Direito Digital (2016) - CEDEP</p>
+<p id="p1">COBIT (2015) - EV BRADESCO</p>
+<p id="p1">ITIL (2016) - SENASP</p>
+<p id="p1">Manutenção de Computadores (2014) - PRIME CURSOS</p>
+<p id="p1">Segurança da Informação (2013) - EV BRADESCO</p>
+<p id="p1">SilverLight (2014) - EV BRADESCO</p>
+</b></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<p id="p1"><b></b></p><b>
+<p id="p1">Crimes Ambientais (2010) - SENASP</p>
+<p id="p1">Filosofia dos Direitos Humanos (2014) - SENASP</p>
+<p id="p1">Gerenciamento de Crises(2011) - SENASP</p>
+<p id="p1">Identificação de Armas de Fogo (2013) - SENASP</p>
+<p id="p1">Identificação Veicular (2010) - SENASP</p>  
+<p id="p1">Informação em Gestão de Segurança Pública (2015) - SENASP</p>
+<p id="p1">Polícia Comunitária (2010) - SENASP</p>
+<p id="p1">Policiamento Comunitário Escolar (2013) - SENASP</p>
+<p id="p1">Redação Técnica (2010) - SENASP</p>
+</td>
+</tr>
+</table>
+  
+<tr>  
+<td><h1 id="menu4" class="menu4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contato</h1><b>
+Email: feoli7@hotmail.com </br>
+Telefone: (027) 99914-8998.
+</td>
+</tr>
+  
 </table>
 </body>
 </html>
