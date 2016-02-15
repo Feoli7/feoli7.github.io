@@ -3,7 +3,7 @@
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2016 by Feoli7 (http://jsbin.com/jigoxan/6/edit)
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/jigoxan/8/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
@@ -23,7 +23,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>AULA 001</title>
+  <title>MINI-CURRICULO</title>
 <style id="jsbin-css">
 
 </style>
@@ -31,9 +31,14 @@ Released under the MIT license: http://jsbin.mit-license.org
 
 </style>
 <style id="jsbin-css">
-div {
-    width: 80px;
-    height: 50px;
+#card {
+  background-image: url(http://i68.tinypic.com/ab2slw.jpg);
+  width: 110px;
+  height: 150px;
+  background-size: 110px 150px;
+  background-repeat: no-repeat;
+  margin: 16px;
+  box-shadow: 20px 10px 15px grey;
 }
 
 #menu1{
@@ -72,45 +77,48 @@ div {
   background-color: black;
   text-shadow: 5px 5px 5px gray }
 
+#p0{background-color: rgba(210, 210, 210, 0.9); }
 #p1{background-color: rgba(255, 255, 200, 0.9); }
 #p2{background-color: rgba(255, 200, 190, 0.9); }
+#p3{background-color: rgba(175, 235, 235, 0.9); }
 
-#card{
-    width: 100px;
-    height: 100px;
-    background: green;
-    transition: width 2s;
-}
 
-#trans{
-    width: 100px;
-    height: 100px;
-    background:red;
-    transition: width 2s;
-}
-
-#trans:hover {
-    width: 200px;
+#card:hover {
+    transform: scale(2,2);
 }
 
 </style>
 </head>
 <body>
-<table width="1200" border="0" align="center"> 
+<table width="80%" border="0" align="center"> 
 <tr>
-<td><h1 id="menu1" class="menu1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sobre</h1>
-Graduando em Sistemas de Informação (2012 - 2016). Tem experiência na área de Ciência da Computação, com ênfase em Otimização, IA e Sistemas de Apoio à Tomada de Decisão, como projetos de datawarehouse e OLAP. Atuou como coordenador de cursos superiores em Computação e Sistemas
+<td>
+<h1 id="menu1" class="menu1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dados Pessoais</h1>
+<table align="center" width="1100" border="0"> 
+<tbody><tr>
+<td>
+<p id="p0"><b>Nome: FELIPE DE OLIVEIRA VOGEL PENNA</br></br>
+Endereço: Rua Jaime Duarte 599 - Itapoa - Vila Velha/ES</br></br>
+RG: 123456-7</br></br>
+CPF:  123.456.789-10</br></br>
+Data Nascimento: 02/10/1988</p>
+</td>
+<td  align="center">
+<div id="card" class="card" >
+</div>
 </td>
 </tr>
+</table>
 
-<tr><td>
+<tr>
+<td>
 <h1 id="menu2" class="menu2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Formação Acadêmica</h1>
 <p id="p2"><b>Curso de Formação de Soldados (2009 - 2010) - 
 <a href="http://www.pm.es.gov.br/">Polícia Militar ES</a></p><b>
 <p id="p2">Graduando em Sistemas de Informação (2012 - 2016) - 
 <a href="http://www.uvv.br/">Universidade Vila Velha.</a>
 </p></b></td>
-<td rowspan="2"><div></div></td>
+
 </tr>
 
 <tr>
@@ -118,37 +126,37 @@ Graduando em Sistemas de Informação (2012 - 2016). Tem experiência na área d
 <table align="center" width="1100" border="0"> 
 <tbody><tr>
 <td>
-<p id="p1"><b></b></p><b>
-<p id="p1">Aplicações Java Mobile (2015) - EV BRADESCO</p>
+<b>
 <p id="p1">Comunicação Visual (2006) - DATA CONTROL</p>
-<p id="p1">Crimes Cibernéticos (2014) - SENASP</p>
-<p id="p1">Direito Digital (2016) - CEDEP</p>
-<p id="p1">COBIT (2015) - EV BRADESCO</p>
-<p id="p1">ITIL (2016) - SENASP</p>
-<p id="p1">Manutenção de Computadores (2014) - PRIME CURSOS</p>
+<p id="p1">Crimes Ambientais (2010) - SENASP</p>
+<p id="p1">Identificação Veicular (2010) - SENASP</p>  
+<p id="p1">Redação Técnica (2010) - SENASP</p>
+<p id="p1">Polícia Comunitária (2010) - SENASP</p>
+<p id="p1">Gerenciamento de Crises(2011) - SENASP</p>
+<p id="p1">Policiamento Comunitário Escolar (2013) - SENASP</p>
+<p id="p1">Identificação de Armas de Fogo (2013) - SENASP</p>
 <p id="p1">Segurança da Informação (2013) - EV BRADESCO</p>
-<p id="p1">SilverLight (2014) - EV BRADESCO</p>
 </b></td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
-<p id="p1"><b></b></p><b>
-<p id="p1">Crimes Ambientais (2010) - SENASP</p>
+<b>
 <p id="p1">Filosofia dos Direitos Humanos (2014) - SENASP</p>
-<p id="p1">Gerenciamento de Crises(2011) - SENASP</p>
-<p id="p1">Identificação de Armas de Fogo (2013) - SENASP</p>
-<p id="p1">Identificação Veicular (2010) - SENASP</p>  
+<p id="p1">SilverLight (2014) - EV BRADESCO</p>
+<p id="p1">Manutenção de Computadores (2014) - PRIME CURSOS</p>
+<p id="p1">Crimes Cibernéticos (2014) - SENASP</p>
 <p id="p1">Informação em Gestão de Segurança Pública (2015) - SENASP</p>
-<p id="p1">Polícia Comunitária (2010) - SENASP</p>
-<p id="p1">Policiamento Comunitário Escolar (2013) - SENASP</p>
-<p id="p1">Redação Técnica (2010) - SENASP</p>
+<p id="p1">Aplicações Java Mobile (2015) - EV BRADESCO</p>
+<p id="p1">COBIT (2015) - EV BRADESCO</p>
+<p id="p1">ITIL (2016) - SENASP</p>
+<p id="p1">Direito Digital (2016) - CEDEP</p>
 </td>
 </tr>
 </table>
   
 <tr>  
 <td><h1 id="menu4" class="menu4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contato</h1><b>
-Email: feoli7@hotmail.com </br>
-Telefone: (027) 99914-8998.
+<p id="p3">Email: feoli7@hotmail.com </br></br>
+Telefone: (027) 99914-8998.</p>
 </td>
 </tr>
   
