@@ -3,7 +3,7 @@
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2016 by Feoli7 (http://jsbin.com/jigoxan/11/edit)
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/yetopep/4/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
@@ -31,6 +31,15 @@ Released under the MIT license: http://jsbin.mit-license.org
 
 </style>
 <style id="jsbin-css">
+#header {
+    color: white;
+    background: linear-gradient(to top, black, white, black, white, black);
+    text-align:center;
+    padding:5px;
+    font-size:30px;
+    text-shadow: 5px 5px 5px grey;
+}
+
 #card {
   background-image: url(http://i68.tinypic.com/ab2slw.jpg);
   width: 110px;
@@ -41,129 +50,91 @@ Released under the MIT license: http://jsbin.mit-license.org
   box-shadow: 20px 10px 15px grey;
 }
 
-body {
-    background-image: url(http://www.detaildesignonline.com/contentimages/white%20render.jpg);
-}
-
-#menu1{
-  background-image: url(http://icons.iconarchive.com/icons/visualpharm/must-have/256/User-icon.png);
-  background-size: 70px 50px;
-  background-position left;
-  background-repeat: no-repeat;
-  color: white;
-  background-color: black;
-  text-shadow: 5px 5px 5px gray }
-
-#menu2{
-  background-image: url(http://www.colegiopadrecorrea.com.br/imagens/icon_aluno.png);
-  background-size: 70px 50px;
-  background-position left;
-  background-repeat: no-repeat;
-  color: white;
-  background-color: black;
-  text-shadow: 5px 5px 5px gray }
-
-#menu3{
-  background-image: url(http://www.starlog.com.br/wp-content/uploads/2015/07/icone_cert.png);
-  background-size: 70px 50px;
-  background-position left;
-  background-repeat: no-repeat;
-  color: white;
-  background-color: black;
-  text-shadow: 5px 5px 5px gray }
-
-#menu4{
-  background-image: url(http://alberto.cim.br/gallery/contact-us-icon1.png);
-  background-size: 60px 38px;
-  background-position left;
-  background-repeat: no-repeat;
-  color: white;
-  background-color: black;
-  text-shadow: 5px 5px 5px gray }
-
-#p0{background-color: rgba(210, 210, 210, 0.9); }
-#p1{background-color: rgba(255, 255, 200, 0.9); }
-#p2{background-color: rgba(255, 200, 190, 0.9); }
-#p3{background-color: rgba(175, 235, 235, 0.9); }
-
-
 #card:hover {
-    transform: scale(2,2);
+    transform: scale(1.5,1.5);
 }
 
+#p1{  background-color: red; 
+      border-radius: 10px;}
+#p2{  background-color: orange;
+      border-radius: 10px;}
+#p3{  background-color: yellow;
+      border-radius: 10px;}
+
+#menu1{  
+  background-size: 70px 50px;
+  background-position left;
+  background-repeat: no-repeat;
+  background: linear-gradient(to top, black, white);
+  color: white;
+  background-color: black;
+  text-shadow: 5px 5px 5px gray }
+
+#nav {
+    line-height:30px;
+    background: linear-gradient(to top, black, white);
+    height:300px;
+    width:200px;
+    float:left;
+    padding:5px; 
+}
+
+#section {
+    width:350px;
+    float:left;
+    padding:0px; 
+}
+#footer {
+    background: linear-gradient(to top, black, white);
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+}
 </style>
 </head>
-<body>
-<table width="80%" border="0" align="center"> 
+<body style="margin: 0px; padding: 0px; height: 100%; width: 100%;" >
+
+<div id="header">
+<h1>MINI CURRICULUM ONLINE</h1>
+</div>
+
+<div id="nav">
+<p id="p1" align="center">DADOS PESSOAIS</p>
+<p id="p2" align="center">Paris</p>
+<p id="p3" align="center">Tokyo</p>
+</div>
+
+<div id="section">
+<table width="1100" border="0"> 
+<tr>
+<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://icons.iconarchive.com/icons/visualpharm/must-have/256/User-icon.png" alt="Fjords" width="50" height="50">&nbsp;&nbsp;&nbsp;DADOS PESSOAIS</h1>
+<table width="1100" border="0"> 
 <tr>
 <td>
-<h1 id="menu1" class="menu1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dados Pessoais</h1>
-<table align="center" width="1100" border="0"> 
-<tbody><tr>
-<td>
-<p id="p0"><b></br>Nome: FELIPE DE OLIVEIRA VOGEL PENNA</br></br>
+<p><b>Nome: FELIPE DE OLIVEIRA VOGEL PENNA</br></br>
 Endereço: Rua Jaime Duarte 599 - Itapoa - Vila Velha/ES</br></br>
 RG: 123456-7</br></br>
 CPF:  123.456.789-10</br></br>
-Data Nascimento: 02/10/1988</br></br></p>
+Data Nascimento: 02/10/1988</br></br></br></br></p>
 </td>
-<td  align="center">
+<td>
 <div id="card" class="card" >
 </div>
 </td>
 </tr>
 </table>
-
-<tr>
-<td>
-<h1 id="menu2" class="menu2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Formação Acadêmica</h1>
-<p id="p2"><b></br>Curso de Formação de Soldados (2009 - 2010) - 
-<a href="http://www.pm.es.gov.br/">Polícia Militar ES</a></br></br></p><b>
-<p id="p2"></br>Graduando em Sistemas de Informação (2012 - 2016) - 
-<a href="http://www.uvv.br/">Universidade Vila Velha.</a></br></br>
-</p></b></td>
-
-</tr>
-
-<tr>
-<td><h1 id="menu3" class="menu3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cursos Complementares</h1>
-<table align="center" width="1100" border="0"> 
-<tbody><tr>
-<td align="center">
-<b>
-<p id="p1"></br>Comunicação Visual (2006) - DATA CONTROL</br></br></p>
-<p id="p1"></br>Crimes Ambientais (2010) - SENASP</br></br></p>
-<p id="p1"></br>Identificação Veicular (2010) - SENASP</br></br></p>  
-<p id="p1"></br>Redação Técnica (2010) - SENASP</br></br></p>
-<p id="p1"></br>Polícia Comunitária (2010) - SENASP</br></br></p>
-<p id="p1"></br>Gerenciamento de Crises(2011) - SENASP</br></br></p>
-<p id="p1"></br>Policiamento Comunitário Escolar (2013) - SENASP</br></br></p>
-<p id="p1"></br>Identificação de Armas de Fogo (2013) - SENASP</br></br></p>
-<p id="p1"></br>Segurança da Informação (2013) - EV BRADESCO</br></br></p>
-</b></td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td align="center">
-<b>
-<p id="p1"></br>Filosofia dos Direitos Humanos (2014) - SENASP</br></br></p>
-<p id="p1"></br>SilverLight (2014) - EV BRADESCO</br></br></p>
-<p id="p1"></br>Manutenção de Computadores (2014) - PRIME CURSOS</br></br></p>
-<p id="p1"></br>Crimes Cibernéticos (2014) - SENASP</br></br></p>
-<p id="p1"></br>Informação em Gestão de Segurança Pública (2015) - SENASP</br></br></p>
-<p id="p1"></br>Aplicações Java Mobile (2015) - EV BRADESCO</br></br></p>
-<p id="p1"></br>COBIT (2015) - EV BRADESCO</br></br></p>
-<p id="p1"></br>ITIL (2016) - SENASP</br></br></p>
-<p id="p1"></br>Direito Digital (2016) - CEDEP</br></br></p>
 </td>
 </tr>
 </table>
-  
-<tr>  
-<td><h1 id="menu4" class="menu4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contato</h1><b>
-<p id="p3"></br>Email: feoli7@hotmail.com </br></br>
-Telefone: (027) 99914-8998.</br></br></p>
-</td>
-</tr>
-  
-</table>
+</div>
+<div id="footer">
+Copyright © feoli7.github.io
+</div>
+
+<script id="jsbin-javascript">
+
+
+</script>
 </body>
 </html>
