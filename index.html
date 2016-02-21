@@ -3,7 +3,7 @@
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2016 by Feoli7 (http://jsbin.com/yetopep/4/edit)
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/yetopep/6/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
@@ -42,9 +42,9 @@ Released under the MIT license: http://jsbin.mit-license.org
 
 #card {
   background-image: url(http://i68.tinypic.com/ab2slw.jpg);
-  width: 110px;
-  height: 150px;
-  background-size: 110px 150px;
+  width: 100px;
+  height: 130px;
+  background-size: 100px 130px;
   background-repeat: no-repeat;
   margin: 16px;
   box-shadow: 20px 10px 15px grey;
@@ -52,6 +52,20 @@ Released under the MIT license: http://jsbin.mit-license.org
 
 #card:hover {
     transform: scale(1.5,1.5);
+}
+#b1{  width: 200px;
+      height: 50px;
+      font-size:12px;
+      font-weight: bold;
+      color: white;
+      background-color: black; 
+      border-radius: 50px;
+}
+#b1:hover {
+  color: black;
+  background-color: #E0E0E0;
+  font-size:12px;
+  box-shadow: 5px 5px 5px grey;
 }
 
 #p1{  background-color: red; 
@@ -93,16 +107,23 @@ Released under the MIT license: http://jsbin.mit-license.org
 }
 </style>
 </head>
-<body style="margin: 0px; padding: 0px; height: 100%; width: 100%;" >
-
+<body style="margin: 0px; padding: 0px; height: 100%; width:100%;">
+ 
 <div id="header">
-<h1>MINI CURRICULUM ONLINE - teste</h1>
+<h1>MINI CURRICULUM ONLINE</h1>
 </div>
 
 <div id="nav">
-<p id="p1" align="center">DADOS PESSOAIS</p>
-<p id="p2" align="center">Paris</p>
-<p id="p3" align="center">Tokyo</p>
+</br>
+<input id="b1" type="button" value="DADOS PESSOAIS" onclick="location.href= 'http://feoli7.github.io' ">
+</br>
+<input id="b1" type="button" value="FORMAÇÃO" onclick="location.href= 'http://www.globo.com' ">
+</br>
+<input id="b1" type="button" value="CURSOS COMPLEMENTARES" onclick="location.href= 'http://www.globo.com' ">
+</br>
+<input id="b1" type="button" value="ATIVIDADES" onclick="location.href= 'http://www.globo.com' ">
+</br>
+<input id="b1" type="button" value="DADOS PESSOAIS" onclick="location.href= 'http://www.globo.com' ">
 </div>
 
 <div id="section">
@@ -112,11 +133,13 @@ Released under the MIT license: http://jsbin.mit-license.org
 <table width="1100" border="0"> 
 <tr>
 <td>
-<p><b>Nome: FELIPE DE OLIVEIRA VOGEL PENNA</br></br>
-Endereço: Rua Jaime Duarte 599 - Itapoa - Vila Velha/ES</br></br>
-RG: 123456-7</br></br>
-CPF:  123.456.789-10</br></br>
-Data Nascimento: 02/10/1988</br></br></br></br></p>
+<p><b>Nome: FELIPE DE OLIVEIRA VOGEL PENNA</br>
+Endereço: Rua Jaime Duarte 599 - Itapoa - Vila Velha/ES</br>
+RG: 123456-7</br>
+CPF:  123.456.789-10</br>
+Data Nascimento: 02/10/1988</br>
+Telefone: (27) 99914-8998</br>
+E-mail: feoli7@hotmail.com</br></br></br></p>
 </td>
 <td>
 <div id="card" class="card" >
