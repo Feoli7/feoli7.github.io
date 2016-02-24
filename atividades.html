@@ -53,34 +53,66 @@ Released under the MIT license: http://jsbin.mit-license.org
   font-size:12px;
   box-shadow: 5px 5px 5px grey;
 }
-#p1{  background: linear-gradient(to top, white, black); 
-      border-radius: 50px;}
-#a1{
-  color: black;
-  font-size:25px;
+
+#b2{  width: 500px;
+      height: 50px;
+      font-size:12px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to top, white, blue);  
+      border-radius: 50px;
 }
-#logo1{
-  width: 50px;
-  height: 50px;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e7/Bras%C3%A3o_PMES.PNG);
-  background-size: 50px 50px;
-  border-radius: 50px;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  background-color: white;
-  text-shadow: 5px 5px 5px gray }
-#logo2{
-  width: 50px;
-  height: 50px;
-  background-image: url(http://fs02.androidpit.info/a/1a/bb/uvv-mobile-1abb07-w240.png);
-  background-size: 50px 50px;
-  border-radius: 50px;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  background-color: white;
-  text-shadow: 5px 5px 5px gray }
+#b2:hover {
+  color: black;
+  background: linear-gradient(to top, blue, white);
+  font-size:12px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+#b3{  width: 500px;
+      height: 50px;
+      font-size:12px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to top, white, red);  
+      border-radius: 50px;
+}
+#b3:hover {
+  color: black;
+  background: linear-gradient(to top, red, white);  
+  font-size:12px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+#b4{  width: 500px;
+      height: 50px;
+      font-size:12px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to top, white, green);  
+      border-radius: 50px;
+}
+#b4:hover {
+  color: black;
+  background: linear-gradient(to top, green, white); 
+  font-size:12px;
+  box-shadow: 5px 5px 5px grey;
+}
+#b5{  width: 500px;
+      height: 50px;
+      font-size:12px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to top, white, orange);  
+      border-radius: 50px;
+}
+#b5:hover {
+  color: black;
+  background: linear-gradient(to top, orange, white); 
+  font-size:12px;
+  box-shadow: 5px 5px 5px grey;
+}
+
 #menu1{  
   background-size: 70px 50px;
   background-position: left;
@@ -89,6 +121,7 @@ Released under the MIT license: http://jsbin.mit-license.org
   color: white;
   background-color: black;
   text-shadow: 5px 5px 5px gray }
+
 #nav {
     line-height:30px;
     background: linear-gradient(to top, black, white);
@@ -97,11 +130,13 @@ Released under the MIT license: http://jsbin.mit-license.org
     float:left;
     padding:5px; 
 }
+
 #section {
     width:350px;
     float:left;
     padding:0px; 
 }
+
 #footer {
     background: linear-gradient(to top, black, white);
     color:white;
@@ -133,16 +168,31 @@ Released under the MIT license: http://jsbin.mit-license.org
 <div id="section">
 <table width="1100" border="0"> 
 <tr>
-<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://www.colegiopadrecorrea.com.br/imagens/icon_aluno.png" width="50" height="50">&nbsp;&nbsp;&nbsp;FORMAÇÃO</h1>
+<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://www.colegiopadrecorrea.com.br/imagens/icon_aluno.png" width="50" height="50">&nbsp;&nbsp;&nbsp;ATIVIDADES</h1>
 <table width="1100" border="0"> 
 <tr>
 <td>
-<p id="p1">
-<input id="logo1" type="button"  onclick="location.href= 'http://www.pm.es.gov.br' "><a id="a1">&nbsp;&nbsp;&nbsp;Curso de Formação de Soldados (2009 - 2010) - PMES</a></br></p>
-<p id="p1"> 
-<input id="logo2" type="button" onclick="location.href= 'http://www.uvv.br' "><a id="a1">&nbsp;&nbsp;&nbsp;Graduando em Sistemas de Informação (2012 - 2016) - UVV.</a></br></p>
+</br>
+<input id="b2" type="button" value="ATIVIDADE - CARDS" onclick="location.href= 'http://feoli7.github.io/atividade_cards' ">
+</br>
+</td>
+<td>
+</br>
+<input id="b3" type="button" value="ATIVIDADE - EM CONSTRUÇÃO" onclick="location.href= 'http://feoli7.github.io' ">
+</br>
 </td>
 </tr>
+<tr>
+<td>
+</br>
+<input id="b4" type="button" value="ATIVIDADE - EM CONSTRUÇÃO" onclick="location.href= 'http://feoli7.github.io' ">
+</br>
+</td>
+<td>
+</br>
+<input id="b5" type="button" value="ATIVIDADE - EM CONSTRUÇÃO" onclick="location.href= 'http://feoli7.github.io' ">
+</br>
+</td></tr>
 </table>
 </td>
 </tr>
