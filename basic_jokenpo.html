@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
 Created using JS Bin
@@ -20,6 +21,16 @@ Released under the MIT license: http://jsbin.mit-license.org
 
 <meta name="robots" content="noindex">
 <html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MINI CURRICULUM ONLINE</title>
+<style id="jsbin-css">
+
+</style>
+<style id="jsbin-css">
+
+</style>
 <style id="jsbin-css">
 #header {
     color: white;
@@ -28,18 +39,6 @@ Released under the MIT license: http://jsbin.mit-license.org
     padding:5px;
     font-size:30px;
     text-shadow: 5px 5px 5px grey;
-}
-#card {
-  background-image: url(http://i68.tinypic.com/ab2slw.jpg);
-  width: 100px;
-  height: 130px;
-  background-size: 100px 130px;
-  background-repeat: no-repeat;
-  margin: 16px;
-  box-shadow: 20px 10px 15px grey;
-}
-#card:hover {
-    transform: scale(1.5,1.5);
 }
 #b1{  width: 200px;
       height: 50px;
@@ -192,21 +191,21 @@ img{
 <div id="section">
 <table width="1100" border="0"> 
 <tr>
-<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://1.bp.blogspot.com/-hsl1m-5FUMw/T7-K9IsJqkI/AAAAAAAABn4/4qMqvW-Ipxo/s1600/hospedar+arquivos+gratis.png" width="50" height="50">&nbsp;&nbsp;&nbsp;ATIVIDADE - JO-KEN-PO BÁSICO</h1>
+<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://feoli7.github.io/basic_jokenpo/ativ.png" width="50" height="50">&nbsp;&nbsp;&nbsp;ATIVIDADE - JO-KEN-PO BÁSICO</h1>
 <table width="1100" border="0" cellspacing="30"> 
 <tr>
 <td align="center">
 <div class="background" >
 <div class="options">
-<div id="p1_rock" class="option"><img src="http://www.farmvillefreak.com/farmville_images/facebook_farmville_freak_rock_cb_icon.png" alt="rock"></div>
-<div id="p1_paper" class="option"><img src="http://www.farmvillefreak.com/farmville_images/facebook_farmville_freak_paper_cb_icon.png" alt="paper"></div>
-<div id="p1_scizor" class="option"><img src="http://www.farmvillefreak.com/farmville_images/facebook_farmville_freak_scissors_cb_icon.png" alt="scizor"></div>
+<div id="p1_rock" class="option"><img src="http://feoli7.github.io/imagens/pedra.png" alt="rock"></div>
+<div id="p1_paper" class="option"><img src="http://feoli7.github.io/imagens/papel.png" alt="paper"></div>
+<div id="p1_scizor" class="option"><img src="http://feoli7.github.io/imagens/tesoura.png" alt="scizor"></div>
 <div id="espaço" class="space" ></div>
-<div id="p2_rock" class="option"><img src="http://www.farmvillefreak.com/farmville_images/facebook_farmville_freak_rock_cb_icon.png" alt="rock"></div>
-<div id="p2_paper" class="option"><img src="http://www.farmvillefreak.com/farmville_images/facebook_farmville_freak_paper_cb_icon.png" alt="paper"></div>
-<div id="p2_scizor" class="option"><img src="http://www.farmvillefreak.com/farmville_images/facebook_farmville_freak_scissors_cb_icon.png" alt="scizor"></div>
+<div id="p2_rock" class="option"><img src="http://feoli7.github.io/imagens/pedra.png" alt="rock"></div>
+<div id="p2_paper" class="option"><img src="http://feoli7.github.io/imagens/papel.png" alt="paper"></div>
+<div id="p2_scizor" class="option"><img src="http://feoli7.github.io/imagens/tesoura.png" alt="scizor"></div>
 </div>
-<div id="result" class="result" ><img src="https://image.freepik.com/free-icon/question-mark_318-52837.png" alt="none"></div></br>
+<div id="result" class="result" ><img src="http://feoli7.github.io/imagens/interr.png" alt="none"></div></br>
 <div class="score" >
 <h3 id="p1_score" class="player" >Jogador</h2>
 <h3 id="p2_score" class="player" >Computador</h2>
@@ -264,12 +263,12 @@ function zera(){
 function check(){
 	var result = document.getElementById("result").childNodes[0];
 	if(ia==player){
-		result.src="http://i3.kym-cdn.com/photos/images/original/000/103/740/c2c.png";
+		result.src="http://feoli7.github.io/imagens/draw.png";
 	}else if( (player == "rock" && ia == "paper") || (player == "paper" && ia == "scizor")|| (player == "scizor" && ia == "rock") ) {
-		result.src="http://pre08.deviantart.net/ffa5/th/pre/f/2012/356/9/1/known_memes_refreshed_by_me__ragemanderp__by_zcoogerchannel-d5otiys.png";
+		result.src="http://feoli7.github.io/imagens/loser.png";
 		score[1]++;
 	}else{
-		result.src="http://i1.kym-cdn.com/photos/images/original/000/045/092/cool_face.png";
+		result.src="http://feoli7.github.io/imagens/winner.png";
 		score[0]++;
 	}
 	document.getElementById("p1_score").innerHTML = score[0];
