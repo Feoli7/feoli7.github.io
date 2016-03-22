@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2016 by Feoli7 (http://jsbin.com/mijaqa/6/edit)
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/junaqu/8/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
@@ -14,12 +14,53 @@ Released under the MIT license: http://jsbin.mit-license.org
   <meta name="viewport" content="width=device-width">
   <title>MINI CURRICULUM ONLINE</title>
 <style id="jsbin-css">
+#passwd{
+  border: 5px solid black;
+  width: 280px;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 50px;
+}
 
-</style>
-<style id="jsbin-css">
+#teclas {
+border: 5px solid black;
+width: 280px;
+text-align: center;  
+background: grey
+}
 
-</style>
-<style id="jsbin-css">
+#teclas ul {
+width: 200px;
+text-align: center;
+background: grey
+}
+
+#teclas li {
+display: inline;
+text-align: center;  
+border-radius: 10px;
+border: 5px solid black;
+padding: 12px;
+line-height: 40px;
+margin: 5px;background: white
+}
+
+#teclas li a {
+text-align: center;
+font-weight: bold;
+font-size: 12px;
+font-family: Verdana, Arial, Helvetica;
+text-decoration: none;
+}
+
+#teclas li a.mostra {
+color: black;
+}
+
+#teclas li:hover {
+background: linear-gradient(to top, black, black, white, black, black);
+}
+
 #header {
     color: white;
     background: linear-gradient(to top, black, white, black, white, black);
@@ -28,8 +69,9 @@ Released under the MIT license: http://jsbin.mit-license.org
     font-size:30px;
     text-shadow: 5px 5px 5px grey;
 }
+
 #card {
-  background-image: url(http://feoli7.github.io/imagens/foto.jpg);
+  background-image: url(http://i68.tinypic.com/ab2slw.jpg);
   width: 100px;
   height: 130px;
   background-size: 100px 130px;
@@ -48,18 +90,14 @@ Released under the MIT license: http://jsbin.mit-license.org
       background-color: black; 
       border-radius: 50px;
 }
+
 #b1:hover {
   color: black;
   background-color: #E0E0E0;
   font-size:12px;
   box-shadow: 5px 5px 5px grey;
 }
-#p1{  background-color: red; 
-      border-radius: 10px;}
-#p2{  background-color: orange;
-      border-radius: 10px;}
-#p3{  background-color: yellow;
-      border-radius: 10px;}
+
 #menu1{  
   background-size: 70px 50px;
   background-position: left;
@@ -68,19 +106,22 @@ Released under the MIT license: http://jsbin.mit-license.org
   color: white;
   background-color: black;
   text-shadow: 5px 5px 5px gray }
+
 #nav {
     line-height:30px;
     background: linear-gradient(to top, black, white);
-    height:300px;
+    height:550px;
     width:200px;
     float:left;
     padding:5px; 
 }
+
 #section {
     width:350px;
     float:left;
     padding:0px; 
 }
+
 #footer {
     background: linear-gradient(to top, black, white);
     color:white;
@@ -112,21 +153,39 @@ Released under the MIT license: http://jsbin.mit-license.org
 <div id="section">
 <table width="1100" border="0"> 
 <tr>
-<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/dp.png" width="50" height="50">&nbsp;&nbsp;&nbsp;DADOS PESSOAIS</h1>
-<table width="1100" border="0"> 
+<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/ativ.png" width="50" height="50">&nbsp;&nbsp;&nbsp;ATIVIDADE - TECLADO VIRTUAL</h1>
+<table width="1100" border="0" cellspacing="30"> 
 <tr>
-<td>
-<p><b>Nome: FELIPE DE OLIVEIRA VOGEL PENNA</br>
-Endereço: Rua Jaime Duarte Nascimento 599 - Itapoa - Vila Velha/ES</br>
-RG: 123456-7</br>
-CPF:  123.456.789-10</br>
-Data Nascimento: 02/10/1988</br>
-Telefone: (27) 99914-8998</br>
-E-mail: feoli7@hotmail.com</br></br></br></p>
-</td>
-<td>
-<div id="card" class="card" >
-</div>
+<td align="center">
+
+  
+  <form id="form" name="form" method="post" action="">
+  <input type="text" name="passwd" id="passwd" />
+  </form>
+  <span id="teclado" name="teclado"></br>
+   <div id="teclas">
+    <ul>
+     <li><a href="#" class="mostra">7</a></li>
+     <li><a href="#" class="mostra">8</a></li>
+     <li><a href="#" class="mostra">9</a></li>
+    </ul>
+    <ul>
+     <li><a href="#" class="mostra">4</a></li>
+     <li><a href="#" class="mostra">5</a></li>
+     <li><a href="#" class="mostra">6</a></li>
+    </ul>
+    <ul>
+     <li><a href="#" class="1">1</a></li>
+     <li><a href="#" class="2">2</a></li>
+     <li><a href="#" class="3">3</a></li>
+    </ul>
+<ul>
+     <li><a href="#" class="0">0</a></li>
+    </ul>
+   </div>
+  </span>  
+  
+
 </td>
 </tr>
 </table>
@@ -137,10 +196,13 @@ E-mail: feoli7@hotmail.com</br></br></br></p>
 <div id="footer">
 Copyright © feoli7.github.io
 </div>
-
+  
 <script id="jsbin-javascript">
-
-
+document.getElementById("form").onkeypress=  function(e) { 
+    var chr = String.fromCharCode(e.which); 
+    if("0123456789".indexOf(chr)< 0) 
+        return  false ; 
+};
 </script>
 </body>
 </html>

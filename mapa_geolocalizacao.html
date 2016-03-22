@@ -1,20 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2016 by Feoli7 (http://jsbin.com/mijaqa/6/edit)
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/sizoruh/2/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
 <meta name="robots" content="noindex">
 <html>
-<head>
-  <meta charset="utf-8">
+    <head>
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>MINI CURRICULUM ONLINE</title>
-
-<style id="jsbin-css">
+        <title>MINI CURRICULUM ONLINE</title>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <style id="jsbin-css">
 #header {
     color: white;
     background: linear-gradient(to top, black, white, black, white, black);
@@ -23,6 +24,7 @@ Released under the MIT license: http://jsbin.mit-license.org
     font-size:30px;
     text-shadow: 5px 5px 5px grey;
 }
+
 
 #b1{  width: 200px;
       height: 50px;
@@ -40,16 +42,6 @@ Released under the MIT license: http://jsbin.mit-license.org
   box-shadow: 5px 5px 5px grey;
 }
 
-#p1{  background: linear-gradient(to top, black, white, black); 
-      border-radius: 20px;
-      height: 50px;    
-      }
-
-#a1{
-  color: black;
-  font-size:25px;
-}
-
 #menu1{  
   background-size: 70px 50px;
   background-position: left;
@@ -62,7 +54,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 #nav {
     line-height:30px;
     background: linear-gradient(to top, black, white);
-    height:735px;
+    height:650px;
     width:200px;
     float:left;
     padding:5px; 
@@ -73,6 +65,7 @@ Released under the MIT license: http://jsbin.mit-license.org
     float:left;
     padding:0px; 
 }
+
 #footer {
     background: linear-gradient(to top, black, white);
     color:white;
@@ -81,9 +74,8 @@ Released under the MIT license: http://jsbin.mit-license.org
     padding:5px; 
 }
 </style>
-</head>
-<body style="margin: 0px; padding: 0px; height: 100%; width:100%;">
- 
+</head> 
+  <body>  
 <div id="header">
 <h1>MINI CURRICULUM ONLINE</h1>
 </div>
@@ -104,46 +96,58 @@ Released under the MIT license: http://jsbin.mit-license.org
 <div id="section">
 <table width="1100" border="0"> 
 <tr>
-<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/cc.png" width="60" height="50">&nbsp;&nbsp;&nbsp;CURSOS COMPLEMENTARES</h1>
-  
-<table align="center" width="1100" border="0"> 
-<tbody><tr>
+<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/ativ.png" width="50" height="50">&nbsp;&nbsp;&nbsp;ATIVIDADE - MAPA E GEOLOCALIZAÇÃO</h1>
+<table width="1100" border="0"> 
+<tr>
 <td align="center">
-<b>
-<p id="p1"></br>Comunicação Visual (2006) - DATA CONTROL</br></br></p>
-<p id="p1"></br>Crimes Ambientais (2010) - SENASP</br></br></p>
-<p id="p1"></br>Identificação Veicular (2010) - SENASP</br></br></p>  
-<p id="p1"></br>Redação Técnica (2010) - SENASP</br></br></p>
-<p id="p1"></br>Polícia Comunitária (2010) - SENASP</br></br></p>
-<p id="p1"></br>Gerenciamento de Crises(2011) - SENASP</br></br></p>
-<p id="p1"></br>Policiamento Comunitário Escolar (2013) - SENASP</br></br></p>
-<p id="p1"></br>Identificação de Armas de Fogo (2013) - SENASP</br></br></p>
-<p id="p1"></br>Segurança da Informação (2013) - EV BRADESCO</br></br></p>
-</b></td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td align="center">
-<b>
-<p id="p1"></br>Filosofia dos Direitos Humanos (2014) - SENASP</br></br></p>
-<p id="p1"></br>SilverLight (2014) - EV BRADESCO</br></br></p>
-<p id="p1"></br>Manutenção de Computadores (2014) - PRIME CURSOS</br></br></p>
-<p id="p1"></br>Crimes Cibernéticos (2014) - SENASP</br></br></p>
-<p id="p1"></br>Informação em Gestão de Segurança Pública (2015) - SENASP</br></br></p>
-<p id="p1"></br>Aplicações Java Mobile (2015) - EV BRADESCO</br></br></p>
-<p id="p1"></br>COBIT (2015) - EV BRADESCO</br></br></p>
-<p id="p1"></br>ITIL (2016) - EV BRADESCO</br></br></p>
-<p id="p1"></br>Direito Digital (2016) - CEDEP</br></br></p>
+
+<div id="map" border="3" style="height:500px; width:1000px;"></div>
+
+</td>
+</tr>
+</table>
 </td>
 </tr>
 </table>
 </div>
-
 <div id="footer">
-Copyright © feoli7.github.io  
+Copyright © feoli7.github.io
 </div>
 
 <script id="jsbin-javascript">
+var map = L.map('map');
+
+var ufesLatLong = [-20.35497,-40.29892];
+map.setView(ufesLatLong,12);
+
+var camadaDeImagem = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+camadaDeImagem.addTo(map);
 
 
+var position1 = [
+   [-20.35497,-40.29892]];
+var ponto1 = L.polygon(position1,{color:'black', weight:15}); 
+ponto1.addTo(map);
+
+//var popup1 = L.popup().setContent("<p>Universidade Vila Velha</p>");
+var popup1 = L.popup().setContent('<img src="http://feoli7.github.io/imagens/m_uvv.jpg" width="250" height=175"><br><b>UVV</b>');
+ponto1.bindPopup(popup1);
+
+var position2 = [
+   [-20.32934,-40.28721]];
+var ponto2 = L.polygon(position2,{color:'black', weight:15}); 
+ponto2.addTo(map);
+
+var popup2 = L.popup().setContent('<img src="http://feoli7.github.io/imagens/m_convento.jpg" width="250" height=175"><br><b>Convento da Penha</b>');
+ponto2.bindPopup(popup2);
+
+var position3 = [
+   [-20.31952,-40.28498]];
+var ponto3 = L.polygon(position3,{color:'black', weight:15}); 
+ponto3.addTo(map);
+
+var popup3 = L.popup().setContent('<img src="http://feoli7.github.io/imagens/m_3ponte.jpg" width="250" height=175"><br><b>3º Ponte</b>');
+ponto3.bindPopup(popup3);
 </script>
 </body>
 </html>
