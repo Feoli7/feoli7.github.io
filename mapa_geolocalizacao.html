@@ -3,7 +3,7 @@
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2016 by Feoli7 (http://jsbin.com/sizoruh/2/edit)
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/sizoruh/6/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
@@ -75,7 +75,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 }
 </style>
 </head> 
-  <body style="margin: 0px; padding: 0px; height: 100%; width:100%;">  
+  <body style="margin: 0px; padding: 0px; height: 100%; width:100%;"> 
 <div id="header">
 <h1>MINI CURRICULUM ONLINE</h1>
 </div>
@@ -101,6 +101,8 @@ Released under the MIT license: http://jsbin.mit-license.org
 <tr>
 <td align="center">
 
+<div onkeypress="myFunction()"></div>
+  
 <div id="map" border="3" style="height:500px; width:1000px;"></div>
 
 </td>
@@ -113,23 +115,32 @@ Released under the MIT license: http://jsbin.mit-license.org
 <div id="footer">
 Copyright © feoli7.github.io
 </div>
+<script language="JavaScript">
+  
+document.onkeypress=function(e){
+if(e.which == 32){
+var marcador = L.marker(xLatLong,{draggable:true});
+marcador.addTo(map);
+}     
 
+}
+  
+</script>
 <script id="jsbin-javascript">
 var map = L.map('map');
 
-var ufesLatLong = [-20.35497,-40.29892];
-map.setView(ufesLatLong,12);
+var xLatLong = [-20.35497,-40.29892];
+map.setView(xLatLong,12);
 
 var camadaDeImagem = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
 camadaDeImagem.addTo(map);
-
 
 var position1 = [
    [-20.35497,-40.29892]];
 var ponto1 = L.polygon(position1,{color:'black', weight:15}); 
 ponto1.addTo(map);
 
-//var popup1 = L.popup().setContent("<p>Universidade Vila Velha</p>");
+
 var popup1 = L.popup().setContent('<img src="http://feoli7.github.io/imagens/m_uvv.jpg" width="250" height=175"><br><b>UVV</b>');
 ponto1.bindPopup(popup1);
 
@@ -148,6 +159,7 @@ ponto3.addTo(map);
 
 var popup3 = L.popup().setContent('<img src="http://feoli7.github.io/imagens/m_3ponte.jpg" width="250" height=175"><br><b>3º Ponte</b>');
 ponto3.bindPopup(popup3);
+
 </script>
 </body>
 </html>
