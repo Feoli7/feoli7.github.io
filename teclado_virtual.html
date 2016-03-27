@@ -3,18 +3,18 @@
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2016 by Feoli7 (http://jsbin.com/junaqu/8/edit)
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/junaqu/11/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
-<meta name="robots" content="noindex">
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>MINI CURRICULUM ONLINE</title>
+
 <style id="jsbin-css">
-#passwd{
+#text{
   border: 5px solid black;
   width: 280px;
   line-height: 50px;
@@ -22,22 +22,37 @@ Released under the MIT license: http://jsbin.mit-license.org
   font-size: 50px;
 }
 
+#reset{
+display: inline;
+text-align: center; 
+font-weight: bold;
+font-size: 12px;
+font-family: Verdana, Arial, Helvetica;
+border-radius: 10px;
+border: 5px solid black;
+padding: 12px;
+margin: 5px;background: white
+}
+
 #teclas {
 border: 5px solid black;
 width: 280px;
 text-align: center;  
-background: grey
+background: #6789C0
 }
 
 #teclas ul {
 width: 200px;
 text-align: center;
-background: grey
+background: #6789C0
 }
 
 #teclas li {
 display: inline;
-text-align: center;  
+text-align: center; 
+font-weight: bold;
+font-size: 12px;
+font-family: Verdana, Arial, Helvetica;
 border-radius: 10px;
 border: 5px solid black;
 padding: 12px;
@@ -45,20 +60,13 @@ line-height: 40px;
 margin: 5px;background: white
 }
 
-#teclas li a {
-text-align: center;
-font-weight: bold;
-font-size: 12px;
-font-family: Verdana, Arial, Helvetica;
-text-decoration: none;
-}
 
-#teclas li a.mostra {
+#teclas li.texto {
 color: black;
 }
 
 #teclas li:hover {
-background: linear-gradient(to top, black, black, white, black, black);
+background: radial-gradient(grey, grey,white, grey, grey);
 }
 
 #header {
@@ -70,18 +78,6 @@ background: linear-gradient(to top, black, black, white, black, black);
     text-shadow: 5px 5px 5px grey;
 }
 
-#card {
-  background-image: url(http://i68.tinypic.com/ab2slw.jpg);
-  width: 100px;
-  height: 130px;
-  background-size: 100px 130px;
-  background-repeat: no-repeat;
-  margin: 16px;
-  box-shadow: 20px 10px 15px grey;
-}
-#card:hover {
-    transform: scale(1.5,1.5);
-}
 #b1{  width: 200px;
       height: 50px;
       font-size:12px;
@@ -154,55 +150,56 @@ background: linear-gradient(to top, black, black, white, black, black);
 <table width="1100" border="0"> 
 <tr>
 <td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/ativ.png" width="50" height="50">&nbsp;&nbsp;&nbsp;ATIVIDADE - TECLADO VIRTUAL</h1>
-<table width="1100" border="0" cellspacing="30"> 
+<table width="1100" border="0" cellspacing="20"> 
 <tr>
 <td align="center">
-
-  
-  <form id="form" name="form" method="post" action="">
-  <input type="text" name="passwd" id="passwd" />
-  </form>
-  <span id="teclado" name="teclado"></br>
+<form name="teclado_virtual" >
+  <input type="text" name="text" id="text" />
+  <span id="teclado" name="teclado"><p>
    <div id="teclas">
     <ul>
-     <li><a href="#" class="mostra">7</a></li>
-     <li><a href="#" class="mostra">8</a></li>
-     <li><a href="#" class="mostra">9</a></li>
+     <li id="7"  onClick="document.teclado_virtual.text.value+='7'" class="texto">7</li>
+     <li id="8"  onClick="document.teclado_virtual.text.value+='8'" class="texto">8</li>
+     <li id="9"  onClick="document.teclado_virtual.text.value+='9'" class="texto">9</li>
     </ul>
     <ul>
-     <li><a href="#" class="mostra">4</a></li>
-     <li><a href="#" class="mostra">5</a></li>
-     <li><a href="#" class="mostra">6</a></li>
+     <li id="4"  onClick="document.teclado_virtual.text.value+='4'" class="texto">4</li>
+     <li id="5"  onClick="document.teclado_virtual.text.value+='5'" class="texto">5</li>
+     <li id="6"  onClick="document.teclado_virtual.text.value+='6'" class="texto">6</li>
     </ul>
     <ul>
-     <li><a href="#" class="1">1</a></li>
-     <li><a href="#" class="2">2</a></li>
-     <li><a href="#" class="3">3</a></li>
-    </ul>
-<ul>
-     <li><a href="#" class="0">0</a></li>
+     <li id="1"  onClick="document.teclado_virtual.text.value+='1'" class="texto">1</li>
+     <li id="2"  onClick="document.teclado_virtual.text.value+='2'" class="texto">2</li>
+     <li id="3"  onClick="document.teclado_virtual.text.value+='3'" class="texto">3</li>
+    </ul>    
+    <ul>
+     <li id="0"  onClick="document.teclado_virtual.text.value+='0'" class="texto">0</li>
+     <input type="reset" name="reset" id="reset" value="Resetar ⟲">
     </ul>
    </div>
-  </span>  
-  
+  </span>
+  </form>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
 
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
 </div>
 <div id="footer">
 Copyright © feoli7.github.io
 </div>
   
 <script id="jsbin-javascript">
-document.getElementById("form").onkeypress=  function(e) { 
+document.getElementById("text").onkeypress=  function(e) { 
     var chr = String.fromCharCode(e.which); 
     if("0123456789".indexOf(chr)< 0) 
         return  false ; 
 };
+
+
+
 </script>
 </body>
 </html>
