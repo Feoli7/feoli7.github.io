@@ -116,46 +116,43 @@ Released under the MIT license: http://jsbin.mit-license.org
 Copyright © feoli7.github.io
 </div>
 <script language="JavaScript">
-  
 document.onkeypress=function(e){
 if(e.which == 32){
 var marcador = L.marker(xLatLong,{draggable:true});
 marcador.addTo(map);
-}     
-marcador.on("dragend",function(){ alert(marcador.getLatLng()); }); 
+}   
+marcador.on("dragend",function(ev){
+	            var chagedPoslat = ev.target.getLatLng().lat;
+				var chagedPoslng = ev.target.getLatLng().lng;
+								                        
+                if ( chagedPoslat < -20.3281 && chagedPoslat > -20.3306 && chagedPoslng > -40.2890 && chagedPoslng < -40.2843  )
+				{  
+				   this.bindPopup('<img src="http://feoli7.github.io/imagens/m_convento.jpg" width="250" height=175"><br><b>Convento da Penha</b>').openPopup();
+				}
+				if ( chagedPoslat < -20.35292 && chagedPoslat > -20.35595 && chagedPoslng > -40.30041 && chagedPoslng < -40.29841  )
+				{  
+				   this.bindPopup('<img src="http://feoli7.github.io/imagens/m_uvv.jpg" width="250" height=175"><br><b>UVV</b>').openPopup();
+				}
+});
 }
  
-</script>
-<script id="jsbin-javascript">
 var map = L.map('map');
 
-var xLatLong = [-20.35497,-40.29892];
+var xLatLong = [-20.32900,-40.31000];
 map.setView(xLatLong,13);
 
 var camadaDeImagem = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
 camadaDeImagem.addTo(map);
 
-var position1 = [[-20.35594,-40.29895],[-20.35544,-40.29823],[-20.35379,-40.29825],[-20.35279,-40.2989],[-20.35382,-40.3003]];
+var position1 =[[-20.35292,-40.30041],[-20.35292,-40.29841],[-20.35595,-40.29841],[-20.35595,-40.30041]];
 var ponto1 = L.polygon(position1,{color:'red', weight:5}); 
 ponto1.addTo(map);
-
-
-var popup1 = L.popup().setContent('<img src="http://feoli7.github.io/imagens/m_uvv.jpg" width="250" height=175"><br><b>UVV</b>');
-ponto1.bindPopup(popup1);
 
 var position2 = [[-20.3281,-40.2890],[-20.3281,-40.2843],[-20.3306,-40.2843],[-20.3306,-40.2890]];
 var ponto2 = L.polygon(position2,{color:'red', weight:5}); 
 ponto2.addTo(map);
 
-var popup2 = L.popup().setContent('<img src="http://feoli7.github.io/imagens/m_convento.jpg" width="250" height=175"><br><b>Convento da Penha</b>');
-ponto2.bindPopup(popup2);
 
-var position3 = [[-20.32513,-40.28296],[-20.31656,-40.28629]];
-var ponto3 = L.polyline(position3,{color:'red', weight:5}); 
-ponto3.addTo(map);
-
-var popup3 = L.popup().setContent('<img src="http://feoli7.github.io/imagens/m_3ponte.jpg" width="250" height=175"><br><b>3º Ponte</b>');
-ponto3.bindPopup(popup3);
 
 </script>
 </body>
