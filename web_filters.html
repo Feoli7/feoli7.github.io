@@ -315,11 +315,11 @@ for(var i=0; i < dataArray.length; i+=4){
       var alpha = dataArray[i+3];
       var bw = (red + green + blue)/3;
       // red
-      dataArray[i] = 1*red;
+      dataArray[i] = bw; //0*red;
       // green
-      dataArray[i+1] = 1*green;
+      dataArray[i+1] = bw; //0*green;
       // blue
-      dataArray[i+2] = 1*blue;
+      dataArray[i+2] = bw; //1*blue;
       dataArray[i+3] = 1*alpha; //1*alpha;
     }
         ctx.putImageData(imageData, 0, 0);
