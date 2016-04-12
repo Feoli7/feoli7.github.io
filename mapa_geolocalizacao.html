@@ -121,18 +121,26 @@ if(e.which == 32){
 var marcador = L.marker(xLatLong,{draggable:true});
 marcador.addTo(map);
 }   
-marcador.on("dragend",function(ev){
-	            var chagedPoslat = ev.target.getLatLng().lat;
+marcador.on("dragend",function(ev){ 
+	      var chagedPoslat = ev.target.getLatLng().lat;
 				var chagedPoslng = ev.target.getLatLng().lng;
-								                        
-                if ( chagedPoslat < -20.3281 && chagedPoslat > -20.3306 && chagedPoslng > -40.2890 && chagedPoslng < -40.2843  )
+				
+        if ( chagedPoslat < -20.35275 && chagedPoslat > -20.35595 && chagedPoslng > -40.3004 && chagedPoslng < -40.2984  )
+        {  
+           this.bindPopup('<img src="http://feoli7.github.io/imagens/m_uvv.jpg" width="250" height=175"><br><b><center>UNIVERSIDADE VILA VELHA</center></b>').openPopup();
+        }				                        
+        if ( chagedPoslat < -20.3280 && chagedPoslat > -20.3305 && chagedPoslng > -40.2890 && chagedPoslng < -40.2845  )
 				{  
-				   this.bindPopup('<img src="http://feoli7.github.io/imagens/m_convento.jpg" width="250" height=175"><br><b>Convento da Penha</b>').openPopup();
+				   this.bindPopup('<img src="http://feoli7.github.io/imagens/m_convento.jpg" width="250" height=175"><br><b><center>CONVENTO DA PENHA</center></b>').openPopup();
 				}
-				if ( chagedPoslat < -20.35292 && chagedPoslat > -20.35595 && chagedPoslng > -40.30041 && chagedPoslng < -40.29841  )
-				{  
-				   this.bindPopup('<img src="http://feoli7.github.io/imagens/m_uvv.jpg" width="250" height=175"><br><b>UVV</b>').openPopup();
-				}
+        if ( chagedPoslat < -20.31780 && chagedPoslat > -20.3230 && chagedPoslng > -40.28620 && chagedPoslng < -40.28300  )
+        {  
+           this.bindPopup('<img src="http://feoli7.github.io/imagens/m_3ponte.jpg" width="250" height=175"><br><b><center>3º PONTE</center></b>').openPopup();
+        }
+        if ( chagedPoslat < -20.30730 && chagedPoslat > -20.31060 && chagedPoslng > -40.34295 && chagedPoslng < -40.33780  )
+        {  
+           this.bindPopup('<img src="http://feoli7.github.io/imagens/m_fontegrande.jpg" width="250" height=175"><br><b><center>PARQUE FONTE GRANDE</center></b>').openPopup();
+        }
 });
 }
  
@@ -144,15 +152,21 @@ map.setView(xLatLong,13);
 var camadaDeImagem = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
 camadaDeImagem.addTo(map);
 
-var position1 =[[-20.35292,-40.30041],[-20.35292,-40.29841],[-20.35595,-40.29841],[-20.35595,-40.30041]];
+var position1 =[[-20.35275,-40.3004],[-20.35275,-40.2984],[-20.35595,-40.2984],[-20.35595,-40.3004]];
 var ponto1 = L.polygon(position1,{color:'red', weight:5}); 
 ponto1.addTo(map);
 
-var position2 = [[-20.3281,-40.2890],[-20.3281,-40.2843],[-20.3306,-40.2843],[-20.3306,-40.2890]];
+var position2 = [[-20.3280,-40.2890],[-20.3280,-40.2845],[-20.3305,-40.2845],[-20.3305,-40.2890]];
 var ponto2 = L.polygon(position2,{color:'red', weight:5}); 
 ponto2.addTo(map);
 
+var position3 = [[-20.31780,-40.28620],[-20.3230,-40.28620],[-20.3230,-40.28300],[-20.31780,-40.28300]];
+var ponto3 = L.polygon(position3,{color:'red', weight:5}); 
+ponto3.addTo(map);
 
+var position4 = [[-20.30730,-40.34295],[-20.31060,-40.34295],[-20.31060,-40.33780],[-20.30730,-40.33780]];
+var ponto4 = L.polygon(position4,{color:'red', weight:5}); 
+ponto4.addTo(map);
 
 </script>
 </body>
