@@ -308,13 +308,20 @@ function detect() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
 
-          for (var i=0; i<dataArray.length; i+=4) {
-          var red = d[i];
-          var green = d[i+1];
-          var blue = d[i+2];
-          var bw = d[i] = d[i+1] = d[i+2] 
-        }
-
+for(var i=0; i < dataArray.length; i+=4){
+      var red   = dataArray[i];
+      var green = dataArray[i+1];
+      var blue  = dataArray[i+2];
+      var alpha = dataArray[i+3];
+      var bw = (red + green + blue)/3;
+      // red
+      dataArray[i] = 1*red;
+      // green
+      dataArray[i+1] = 1*green;
+      // blue
+      dataArray[i+2] = 1*blue;
+      dataArray[i+3] = 1*alpha; //1*alpha;
+    }
         ctx.putImageData(imageData, 0, 0);
 }
 
