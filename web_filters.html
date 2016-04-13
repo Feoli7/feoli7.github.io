@@ -357,8 +357,7 @@ function border() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
         var data = imageData.data;
         var operator = [ 0, -1, 0, -1, 4, -1, 0, -1, 0 ];
-        convolution(data, operator);
-        ctx.putImageData(imageData, 0, 0);
+        ctx.putImageData(convolution(data, operator), 0, 0);
 }
 
 function sepia() {
