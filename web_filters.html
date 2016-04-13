@@ -359,7 +359,7 @@ Filters.laplaceKernel = Filters.getFloat32Array(
   [-1,-1,-1,
    -1, 8,-1,
    -1,-1,-1]);
-Filters.laplace = function(pixels) {
+function bord(){
   return Filters.convolve(pixels, this.laplaceKernel, true);
 };
 
@@ -367,8 +367,7 @@ function border() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
         var data = imageData.data;
         var operator = [ 0, 1, 0, 1, 4, 1, 0, 1, 0 ];
-        imageData.convolution(data, operator);
-        ctx.putImageData(imageData, 0, 0);
+        ctx.putImageData(bord(data), 0, 0);
 }
 
 function sepia() {
