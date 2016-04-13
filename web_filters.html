@@ -241,15 +241,15 @@ function edge(input, context) {
         var g1 = inputData[++priorRow] + inputData[++centerRow] + inputData[++nextRow];
         var b1 = inputData[++priorRow] + inputData[++centerRow] + inputData[++nextRow];
 
-        var rp = inputData[priorRow += 0];
+        var rp = inputData[priorRow += 2];
         var gp = inputData[++priorRow];
         var bp = inputData[++priorRow];
 
-        var rc = inputData[centerRow += 0];
+        var rc = inputData[centerRow += 2];
         var gc = inputData[++centerRow];
         var bc = inputData[++centerRow];
 
-        var rn = inputData[nextRow += 0];
+        var rn = inputData[nextRow += 2];
         var gn = inputData[++nextRow];
         var bn = inputData[++nextRow];
 
