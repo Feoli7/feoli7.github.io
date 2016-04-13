@@ -308,8 +308,8 @@ function detect() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
         for(var i=0; i<dataArray.length; i+= 4){
-          var red = dataArray[i],
-          var green = dataArray[i+1],
+          var red = dataArray[i];
+          var green = dataArray[i+1];
           var blue = dataArray[i+2];
           dataArray[i] = dataArray[i+1] = dataArray[i+2] = 0.3*red + 0.59*green + 0.11*blue;
           dataArray[i] += 40;
