@@ -219,33 +219,185 @@ Copyright © feoli7.github.io
   
 <script id="jsbin-javascript">
 var canvas = document.getElementById('myCanvas');
-var context = canvas.getContext('2d');
- 
-var image = new Image();
-image.src = 'http://feoli7.github.io/imagens/003.png';
-image.onload = drawImage;
- 
-function drawImage(event) {
+var ctx = canvas.getContext('2d');
+
+function drawImage(imageObj) {
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.clearRect(0,0,500,500);
+        ctx.drawImage(imageObj, 0, 0);
+
+        var imageData = ctx.getImageData(0, 0, imageObj.width, imageObj.height);
+        var data = imageData.data;
+
+        ctx.putImageData(imageData, 0, 0);
+}
+
+function drawImageUsingWorker(imageObj) {
+  var image = imageObj.target;
   var width = image.width;
   var height = image.height;
- 
+
   canvas.width = width;
   canvas.height = height;
- 
+
   context.drawImage(image, 0, 0);
   var imageData = context.getImageData(0, 0, width, height);
- 
-  var ww = new Worker('http://feoli7.github.io/webWorker.js');
-  ww.postMessage(imageData);
- 
-  ww.onmessage = function(event) {
-    var sobelData = event.data;
- 
-    // Sobel.toImageData() returns a new ImageData object 
-    var sobelImageData = Sobel.toImageData(sobelData, width, height);
-    contextSobel.putImageData(sobelImageData, 0, 0);
+
+  var ww = new Worker('/feoli7.github.io/imagens/webWorker.js');
+
+  ww.onmessage = function(imageObj) {
+    console.log(imageObj.data);
+    if (Object.prototype.toString.call(imageObj.data) === '[object Uint8ClampedArray]') {
+      var sobelData = imageObj.data;
+      var sobelImageData = Sobel.toImageData(sobelData, width, height);
+      contextSobel.putImageData(sobelImageData, 0, 0);
+    }
   };
+
+  ww.onerror = function(event) {
+    console.error(event);
+  };
+
+  ww.postMessage(imageData);
 }
+
+function red() {
+        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var dataArray = imageData.data;
+
+for(var i=0; i < dataArray.length; i+=4){
+      var red   = dataArray[i];
+      var green = dataArray[i+1];
+      var blue  = dataArray[i+2];
+      var alpha = dataArray[i+3];
+      var bw = (red + green + blue)/3;
+      // red
+      dataArray[i] = 1*red;
+      // green
+      dataArray[i+1] = 0*green;
+      // blue
+      dataArray[i+2] = 0*blue;
+      dataArray[i+3] = 1*alpha; //1*alpha;
+    }
+        ctx.putImageData(imageData, 0, 0);
+}
+
+function green() {
+        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var dataArray = imageData.data;
+
+for(var i=0; i < dataArray.length; i+=4){
+      var red   = dataArray[i];
+      var green = dataArray[i+1];
+      var blue  = dataArray[i+2];
+      var alpha = dataArray[i+3];
+      var bw = (red + green + blue)/3;
+      // red
+      dataArray[i] = 0*red;
+      // green
+      dataArray[i+1] = 1*green;
+      // blue
+      dataArray[i+2] = 0*blue;
+      dataArray[i+3] = 1*alpha; //1*alpha;
+    }
+        ctx.putImageData(imageData, 0, 0);
+}
+
+function blue() {
+        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var dataArray = imageData.data;
+
+for(var i=0; i < dataArray.length; i+=4){
+      var red   = dataArray[i];
+      var green = dataArray[i+1];
+      var blue  = dataArray[i+2];
+      var alpha = dataArray[i+3];
+      var bw = (red + green + blue)/3;
+      // red
+      dataArray[i] = 0*red;
+      // green
+      dataArray[i+1] = 0*green;
+      // blue
+      dataArray[i+2] = 1*blue;
+      dataArray[i+3] = 1*alpha; //1*alpha;
+    }
+        ctx.putImageData(imageData, 0, 0);
+}
+
+function pb() {
+        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var dataArray = imageData.data;
+
+for(var i=0; i < dataArray.length; i+=4){
+      var red   = dataArray[i];
+      var green = dataArray[i+1];
+      var blue  = dataArray[i+2];
+      var alpha = dataArray[i+3];
+      var bw = (red + green + blue)/3;
+      // red
+      dataArray[i] = bw; //0*red;
+      // green
+      dataArray[i+1] = bw; //0*green;
+      // blue
+      dataArray[i+2] = bw; //1*blue;
+      dataArray[i+3] = 1*alpha; //1*alpha;
+    }
+        ctx.putImageData(imageData, 0, 0);
+}
+
+function border() {
+        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var dataArray = imageData.data;
+
+        context.putImageData(sobelImageData, 0, 0);
+}
+
+function sepia() {
+        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var dataArray = imageData.data;
+        for(var i=0; i<dataArray.length; i+= 4){
+          var red = dataArray[i];
+          var green = dataArray[i+1];
+          var blue = dataArray[i+2];
+          dataArray[i] = dataArray[i+1] = dataArray[i+2] = 0.3*red + 0.59*green + 0.11*blue;
+          dataArray[i] += 40;
+          dataArray[i+1] += 20;
+          dataArray[i+2] -= 20;
+        }
+        ctx.putImageData(imageData, 0, 0);
+}
+
+function invert() {
+        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var data = imageData.data;
+
+for(var i = 0; i < data.length; i += 4) {
+          // red
+          data[i] = 255 - data[i];
+          // green
+          data[i + 1] = 255 - data[i + 1];
+          // blue
+          data[i + 2] = 255 - data[i + 2];
+        }
+        ctx.putImageData(imageData, 0, 0);
+}
+
+
+function init(i){      
+        var imageObj = new Image();
+        //imageObj.onload = function() {drawImage(this);};
+        if (i == 1)      { imageObj.src="http://feoli7.github.io/imagens/001.png"; } 
+        else if (i == 2) { imageObj.src="http://feoli7.github.io/imagens/002.png"; } 
+        else if (i == 3) { imageObj.src="http://feoli7.github.io/imagens/003.png"; } 
+        else if (i == 4) { imageObj.src="http://feoli7.github.io/imagens/004.png"; } 
+        else if (i == 5) { imageObj.src="http://feoli7.github.io/imagens/005.png"; } 
+        else if (i == 6) { imageObj.src="http://feoli7.github.io/imagens/006.png"; }
+        else {}
+          imageObj.onload = function() {drawImage(this);};
+};
+
+
 </script>
 </body>
 </html>
