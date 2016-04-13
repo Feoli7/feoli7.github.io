@@ -233,35 +233,6 @@ function drawImage(imageObj) {
         ctx.putImageData(imageData, 0, 0);
 }
 
-function drawImageUsingWorker(imageObj) {
-  var image = imageObj.target;
-  var width = image.width;
-  var height = image.height;
-
-  canvas.width = width;
-  canvas.height = height;
-
-  context.drawImage(image, 0, 0);
-  var imageData = context.getImageData(0, 0, width, height);
-
-  var ww = new Worker('/feoli7.github.io/imagens/webWorker.js');
-
-  ww.onmessage = function(imageObj) {
-    console.log(imageObj.data);
-    if (Object.prototype.toString.call(imageObj.data) === '[object Uint8ClampedArray]') {
-      var sobelData = imageObj.data;
-      var sobelImageData = Sobel.toImageData(sobelData, width, height);
-      contextSobel.putImageData(sobelImageData, 0, 0);
-    }
-  };
-
-  ww.onerror = function(event) {
-    console.error(event);
-  };
-
-  ww.postMessage(imageData);
-}
-
 function red() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
@@ -349,8 +320,25 @@ for(var i=0; i < dataArray.length; i+=4){
 function border() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
-        drawImageUsingWorker;
-        context.putImageData(imageData, 0, 0);
+
+  var ww = new Worker('/webWorker.js');
+
+  ww.onmessage = function(event) {
+    console.log(event.data);
+    if (Object.prototype.toString.call(event.data) === '[object Uint8ClampedArray]') {
+      var sobelData = event.data;
+      var sobelImageData = Sobel.toImageData(sobelData, width, height);
+      contextSobel.putImageData(sobelImageData, 0, 0);
+    }
+  };
+
+  ww.onerror = function(event) {
+    console.error(event);
+  };
+
+  ww.postMessage(imageData);
+
+  context.putImageData(imageData, 0, 0);
 }
 
 function sepia() {
