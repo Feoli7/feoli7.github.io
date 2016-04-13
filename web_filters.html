@@ -263,9 +263,9 @@ function edge(input, context) {
             priorRow = centerRow - bytesPerRow;
             nextRow = centerRow + bytesPerRow;
 
-            var r = 0 + (rc << 3) - r1 - rp - rn;
-            var g = 0 + (gc << 3) - g1 - gp - gn;
-            var b = 0 + (bc << 3) - b1 - bp - bn;
+            var r = 255 + (rc << 3) - r1 - rp - rn;
+            var g = 255 + (gc << 3) - g1 - gp - gn;
+            var b = 255 + (bc << 3) - b1 - bp - bn;
 
             r1 = r2;
             g1 = g2;
