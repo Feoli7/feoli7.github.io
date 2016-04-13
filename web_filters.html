@@ -241,7 +241,7 @@ function edge(input, context) {
         var g1 = inputData[++priorRow] + inputData[++centerRow] + inputData[++nextRow];
         var b1 = inputData[++priorRow] + inputData[++centerRow] + inputData[++nextRow];
 
-        var rp = inputData[priorRow += 1];
+        var rp = inputData[priorRow += 0];
         var gp = inputData[++priorRow];
         var bp = inputData[++priorRow];
 
@@ -249,7 +249,7 @@ function edge(input, context) {
         var gc = inputData[++centerRow];
         var bc = inputData[++centerRow];
 
-        var rn = inputData[nextRow += 1];
+        var rn = inputData[nextRow += 10];
         var gn = inputData[++nextRow];
         var bn = inputData[++nextRow];
 
