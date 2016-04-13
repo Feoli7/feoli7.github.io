@@ -349,8 +349,8 @@ for(var i=0; i < dataArray.length; i+=4){
 function border() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
-
-        context.putImageData(sobelImageData, 0, 0);
+        drawImageUsingWorker;
+        context.putImageData(imageData, 0, 0);
 }
 
 function sepia() {
