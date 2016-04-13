@@ -355,9 +355,9 @@ function convolution(pixels, operator){
 
 function border() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
-        var dataArray = imageData.data;
+        var data = imageData.data;
         var operator = [ 0, -1, 0, -1, 4, -1, 0, -1, 0 ];
-        convolution(pixels, operator);
+        convolution(data, operator);
         ctx.putImageData(imageData, 0, 0);
 }
 
