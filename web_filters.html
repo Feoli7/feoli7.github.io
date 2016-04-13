@@ -235,7 +235,7 @@ function drawImage(event) {
   context.drawImage(image, 0, 0);
   var imageData = context.getImageData(0, 0, width, height);
  
-  var ww = new Worker('/webWorker.js');
+  var ww = new Worker('http://feoli7.github.io/webWorker.js');
   ww.postMessage(imageData);
  
   ww.onmessage = function(event) {
