@@ -306,7 +306,20 @@ for(var i=0; i < dataArray.length; i+=4){
 
 function detect() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
-        var dataArray = imageData.data;
+        var data = imageData.data;
+
+
+for(var i=0; i<data.length; i+= 4){
+    var red = data[i],
+    var green = data[i+1],
+    var blue = data[i+2];
+
+    data[i] = data[i+1] = data[i+2] = 0.3*red + 0.59*green + 0.11*blue;
+
+    data[i] += 40;
+    data[i+1] += 20;
+    data[i+2] -= 20;
+  }
 
         ctx.putImageData(imageData, 0, 0);
 }
