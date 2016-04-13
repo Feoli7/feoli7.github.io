@@ -399,6 +399,21 @@ function border() {
       var imageData = ctx.getImageData(0, 0, 500, 500);
       imageData = edge(imageData, ctx);
 
+      for(var i=0; i < imageData.length; i+=4){
+      var red   = imageData[i];
+      var green = imageData[i+1];
+      var blue  = imageData[i+2];
+      var alpha = imageData[i+3];
+      var bw = (red + green + blue)/3;
+      // red
+      imageData[i] = 1*red;
+      // green
+      imageData[i+1] = 1*green;
+      // blue
+      imageData[i+2] = 1*blue;
+      imageData[i+3] = 1*alpha; //1*alpha;
+    }
+
       ctx.putImageData(imageData, 0, 0);
 }
 
