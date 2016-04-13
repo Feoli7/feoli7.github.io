@@ -312,7 +312,7 @@ function convolution(pixels, operator){
   var src = pixels.data;
   var canvasWidth = pixels.width;
   var canvasHeight = pixels.height;
-  var temporaryCanvas = document.createElement('myCanvas');
+  var temporaryCanvas = document.getElementById('myCanvas');
   var temporaryCtx = temporaryCanvas.getContext('2d');
   var outputData = temporaryCtx.createImageData(canvasWidth, canvasHeight);
 
