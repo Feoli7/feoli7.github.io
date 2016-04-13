@@ -235,12 +235,16 @@ function drawImage(event) {
   context.drawImage(image, 0, 0);
   var imageData = context.getImageData(0, 0, width, height);
  
-  // Sobel constructor returns an Uint8ClampedArray with sobel data 
-  var sobelData = Sobel(imageData);
+  var ww = new Worker('/webWorker.js');
+  ww.postMessage(imageData);
  
-  // [sobelData].toImageData() returns a new ImageData object 
-  var sobelImageData = sobelData.toImageData();
-  context.putImageData(sobelImageData, 0, 0);
+  ww.onmessage = function(event) {
+    var sobelData = event.data;
+ 
+    // Sobel.toImageData() returns a new ImageData object 
+    var sobelImageData = Sobel.toImageData(sobelData, width, height);
+    contextSobel.putImageData(sobelImageData, 0, 0);
+  };
 }
 </script>
 </body>

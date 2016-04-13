@@ -1,19 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @Feoli7
- Watch 3
-  Star 16
- Fork 7 miguelmota/sobel
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathsobel/sobel.js
-cd91ad6  on 7 Feb
-@miguelmota miguelmota Check for object before attempting to generate canvas image data. Add…
-3 contributors @miguelmota @snorpey @pr1ntr
-RawBlameHistory     139 lines (115 sloc)  3.62 KB
 (function(root) {
   'use strict';
 
@@ -152,5 +136,3 @@ RawBlameHistory     139 lines (115 sloc)  3.62 KB
   }
 
 })(this);
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
