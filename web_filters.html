@@ -321,7 +321,7 @@ function border() {
         var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
 
-  var ww = new Worker('/webWorker.js');
+  var ww = new Worker('http://feoli7.github.io/webWorker.js');
 
   ww.onmessage = function(event) {
     console.log(event.data);
