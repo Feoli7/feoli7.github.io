@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by Feoli7 (http://jsbin.com/sizoruh/9/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+    <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+        <title>MINI CURRICULUM ONLINE</title>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <style id="jsbin-css">
+#header {
+    color: white;
+    background: linear-gradient(to top, black, white, black, white, black);
+    text-align:center;
+    padding:5px;
+    font-size:30px;
+    text-shadow: 5px 5px 5px grey;
+}
+
+
+#b1{  width: 200px;
+      height: 50px;
+      font-size:12px;
+      font-weight: bold;
+      color: white;
+      background-color: black; 
+      border-radius: 50px;
+}
+
+#b1:hover {
+  color: black;
+  background-color: #E0E0E0;
+  font-size:12px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+#menu1{  
+  background-size: 70px 50px;
+  background-position: left;
+  background-repeat: no-repeat;
+  background: linear-gradient(to top, black, white);
+  color: white;
+  background-color: black;
+  text-shadow: 5px 5px 5px gray }
+
+#nav {
+    line-height:30px;
+    background: linear-gradient(to top, black, white);
+    height:650px;
+    width:200px;
+    float:left;
+    padding:5px; 
+}
+
+#section {
+    width:350px;
+    float:left;
+    padding:0px; 
+}
+
+#footer {
+    background: linear-gradient(to top, black, white);
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+}
+</style>
+</head> 
+  <body style="margin: 0px; padding: 0px; height: 100%; width:100%;"> 
+<div id="header">
+<h1>MINI CURRICULUM ONLINE</h1>
+</div>
+
+<div id="nav">
+</br>
+<input id="b1" type="button" value="DADOS PESSOAIS" onclick="location.href= 'http://feoli7.github.io' ">
+</br>
+<input id="b1" type="button" value="FORMAÇÃO" onclick="location.href= 'http://feoli7.github.io/formacao' ">
+</br>
+<input id="b1" type="button" value="CURSOS COMPLEMENTARES" onclick="location.href= 'http://feoli7.github.io/cursos_complementares' ">
+</br>
+<input id="b1" type="button" value="ATIVIDADES" onclick="location.href= 'http://feoli7.github.io/atividades' ">
+</br>
+<input id="b1" type="button" value="EM CONSTRUÇÃO" onclick="location.href= '' ">
+</div>
+
+<div id="section">
+<table width="1100" border="0"> 
+<tr>
+<td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/ativ.png" width="50" height="50">&nbsp;&nbsp;&nbsp;ATIVIDADE - VIDEO LOGGER</h1>
+<table width="1100" border="0"> 
+<tr>
+<td align="center">
+<video style="width:700px;height:360px;" id="myVideo">
+    <source id="mp4" src="wind.mp4" type="video/mp4">
+</video>
+ <button id="but_play" style="line-height:20px;" onclick="play()"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
+ <button id="but_pause" style="line-height:20px;" onclick="pause()"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAUSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
+ <button id="but_pause" style="line-height:20px;" onclick="volumenos()"><b>&nbsp;&nbsp;&nbsp;VOLUME -&nbsp;&nbsp;&nbsp;</b></button>
+ <button id="but_pause" style="line-height:20px;" onclick="volumais()"><b>&nbsp;&nbsp;&nbsp;VOLUME +&nbsp;&nbsp;&nbsp;</b></button><br><br>
+</td>
+<td align="center">
+<h3>APERTE O BOTÃO ABAIXO PARA EXIBIR O RELATÓRIO</h3>
+ <button id="but_rel" style="line-height:20px;" onclick="relatorio()"><b>&nbsp;&nbsp;EXIBIR RELATÓRIO&nbsp;&nbsp;</b></button>
+<br>
+<h3 id="relatorio" class="relat">----------</h2>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<br>
+</div>
+<div id="footer">
+Copyright © feoli7.github.io
+</div>
+<script src="https://www.w3.org/2010/05/video/script.js"></script>
+<script>setTimeout('getSecs()',1000);</script>
+<script>setTimeout('pgetSecs()',1000);</script>
+<script language="JavaScript">
+
+  var vid = document.getElementById("myVideo");
+  var pplay=0;
+  var ppause=1;
+  var timeplay = "--:--:--";
+  var timepause = "--:--:--";
+  var qtdplayed = 0;
+  var qtdpaused = 0;
+  var timevolume = "--:--:--";
+
+  var sHors = "0"+0; 
+  var sMins = "0"+0;
+  var sSecs = 0;
+
+  var pHors = "0"+0; 
+  var pMins = "0"+0;
+  var pSecs = 0;
+
+function sgetSecs(){
+  if(pplay==1){
+  sSecs++;
+  if(sSecs==60){sSecs=0;sMins++;
+    if(sMins<=9)sMins="0"+sMins;
+    }
+  if(sMins==60){sMins="0"+0;sHors++;
+    if(sHors<=9)sHors="0"+sHors;
+  }
+  if(sSecs<=9)sSecs="0"+sSecs;
+    timeplay=sHors+":"+sMins+":"+sSecs;
+    setTimeout('sgetSecs()',1000);
+  }else{};
+
+  }
+
+  function pgetSecs(){
+  if(ppause==1){
+  pSecs++;
+  if(pSecs==60){pSecs=0;pMins++;
+    if(pMins<=9)pMins="0"+pMins;
+    }
+  if(pMins==60){pMins="0"+0;pHors++;
+    if(pHors<=9)pHors="0"+pHors;
+  }
+  if(pSecs<=9)pSecs="0"+pSecs;
+    timepause=pHors+":"+pMins+":"+pSecs;
+    setTimeout('pgetSecs()',1000);
+  }else{};
+  }
+ 
+ function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+function timevol() {
+    var d = new Date();
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var s = addZero(d.getSeconds());
+    timevolume = h + ":" + m + ":" + s;
+} 
+
+  function play(){
+    vid.play();
+    pplay=1;ppause=0;qtdplayed=qtdplayed+1;
+    sgetSecs();
+  }
+
+  function pause(){
+    vid.pause();
+    pplay=0;ppause=1;qtdpaused=qtdpaused+1;
+    pgetSecs();
+    
+  }
+
+  function volumenos(){
+    vid.volume = vid.volume-0.1;
+    timevol();
+  }
+
+  function volumais(){
+    vid.volume = vid.volume+0.1;
+    timevol();
+  }
+
+  function relatorio(){
+    document.getElementById("relatorio").innerHTML = nl2br("Duração Assistido: "+timeplay+" \n Duração Parado: "+timepause+" \n Play Quantidade: "+qtdplayed+" vezes \n Pause Quantidade: "+qtdpaused+" vezes \n Volume Modificado: "+timevolume);
+  }
+
+  function nl2br (str, is_xhtml) {   
+    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
+    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+}
+</script>
+</body>
+</html>
