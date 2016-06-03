@@ -96,10 +96,12 @@ Released under the MIT license: http://jsbin.mit-license.org
 <table width="1100" border="0"> 
 <tr>
 <td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/ativ.png" width="50" height="50">&nbsp;&nbsp;&nbsp;ATIVIDADE - CANVAS WEB GAME</h1>
-<table width="1100" border="0" cellspacing="20"> 
+<table width="1100" border="0" cellspacing="0"> 
 <tr>
-<td align="center">
-<br><canvas id="canvas" width="600" height="300" style="border:5px solid #000000;"></canvas>
+<td align="center" >
+<canvas id="canvas" width="600" height="300" style="border:5px solid #000000;"></canvas>
+<br><b>RANKING</b>
+<p id="rank"></p>
 </td>
 </tr>
 </table>
@@ -115,6 +117,12 @@ Copyright © feoli7.github.io
 <script id="jsbin-javascript">
 $(document).ready(function(){
 
+	var scoreranking = localStorage.getItem('player');
+	if(scoreranking != null){
+    	document.getElementById("rank").innerHTML = "JOGADOR: "+ scoreranking +" PONTOS";}
+    else{
+    	document.getElementById("rank").innerHTML = "SEJA O MAIOR PONTUADOR";}
+
 	var canvas = $("#canvas")[0];
 	var ctx = canvas.getContext("2d");
 	var w = $("#canvas").width();
@@ -124,6 +132,7 @@ $(document).ready(function(){
 	var d;
 	var food;
 	var score;
+	var placar;
 	
 	var snake_array;
 	
@@ -134,10 +143,43 @@ $(document).ready(function(){
 		create_food(); 
 		score = 0;
 
-		if(typeof game_loop != "undefined") clearInterval(game_loop);
+		if(typeof game_loop != "undefined") {clearInterval(game_loop); ranking();}
 		game_loop = setInterval(paint, 60);
 	}
 	init();
+    	
+	function ranking() {
+		//localStorage.clear();
+		var scoreranking = localStorage.getItem('player');
+		if(scoreranking != null){
+		if(placar>apenasNumeros(scoreranking)){	
+    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+   
+	    	if (person != null) {
+		    	localStorage.setItem('player', person+" - "+placar);
+                var scoreranking = localStorage.getItem('player');
+		        document.getElementById("rank").innerHTML = "MAIOR PONTUADOR - JOGADOR: "+ scoreranking +" PONTOS";
+			
+	    	}
+        }}
+        else {
+        var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+   
+	    	if (person != null) {
+		    	localStorage.setItem('player', person+" - "+placar);
+                var scoreranking = localStorage.getItem('player');
+		        document.getElementById("rank").innerHTML = "MAIOR PONTUADOR - JOGADOR: "+ scoreranking +" PONTOS";
+			
+	    	}
+	    }
+	}
+
+	function apenasNumeros(string) 
+{
+    var numsStr = string.replace(/[^0-9]/g,'');
+    return parseInt(numsStr);
+}
+	
 	//criar snake
 	function create_snake()
 	{
@@ -204,6 +246,7 @@ $(document).ready(function(){
 		paint_cell(food.x, food.y);
 
 		var score_text = "SCORE: " + score;
+		placar = score;
 		ctx.fillText(score_text, 530, h-290);
 	}
 	
