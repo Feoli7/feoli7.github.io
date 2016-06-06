@@ -174,22 +174,18 @@ background: grey;
 <tr>
 
 <td align="center">
-<br><canvas id="myCanvas" width="500" height="500" style="border:5px solid #000000;"></canvas>
-</td>
-
-<td align="center">
 <form name="teclado_virtual" >
   <span id="teclado" name="teclado"><p>
    <div id="teclas"><br><br><br>
     <ul>
-     <limg id="img1" onClick="init(1)" class="img"><img id="img1" src="http://feoli7.github.io/imagens/0004.jpg" width="80" height="80"></limg>
-     <limg id="img2" onClick="init(2)" class="img"><img id="img2" src="http://feoli7.github.io/imagens/0008.jpg" width="80" height="80"></limg>
-     <limg id="img3"  onClick="init(3)" class="img"><img src="http://feoli7.github.io/imagens/00016.jpg" width="80" height="80"></limg>
+     <limg id="img1" onClick="init(1,3840,2160)" class="img"><img id="img1" src="http://feoli7.github.io/imagens/0004.jpg" width="80" height="80"></limg>
+     <limg id="img2" onClick="init(2,7680,4320)" class="img"><img id="img2" src="http://feoli7.github.io/imagens/0008.jpg" width="80" height="80"></limg>
+     <limg id="img3"  onClick="init(3,15360,8640)" class="img"><img src="http://feoli7.github.io/imagens/00016.jpg" width="80" height="80"></limg>
      </ul><br><br><br>
      <ul>
-     <limg id="img4"  onClick="init(4)" class="img"><img src="http://feoli7.github.io/imagens/004.png" width="80" height="80"></limg>
-     <limg id="img5"  onClick="init(5)" class="img"><img src="http://feoli7.github.io/imagens/005.png" width="80" height="80"></limg>
-     <limg id="img6"  onClick="init(6)" class="img"><img src="http://feoli7.github.io/imagens/006.png" width="80" height="80"></limg>
+     <limg id="img4"  onClick="init(4,500,500)" class="img"><img src="http://feoli7.github.io/imagens/004.png" width="80" height="80"></limg>
+     <limg id="img5"  onClick="init(5,500,500)" class="img"><img src="http://feoli7.github.io/imagens/005.png" width="80" height="80"></limg>
+     <limg id="img6"  onClick="init(6,500,500)" class="img"><img src="http://feoli7.github.io/imagens/006.png" width="80" height="80"></limg>
      </ul>
     <br>
     <ul>
@@ -209,6 +205,10 @@ background: grey;
   </form>
 </td>
 
+<td align="center">
+<br><canvas id="myCanvas" width="500" height="500" style="border:5px solid #000000;"></canvas>
+</td>
+
 </tr>
 </table>
 </td>
@@ -221,6 +221,8 @@ Copyright © feoli7.github.io
 </div>
 
 <script id="jsbin-javascript">
+var xxx=500;
+var yyy=500;
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 
@@ -305,8 +307,8 @@ function edge(input, context) {
 function drawImage(imageObj) {
         var canvas = document.getElementById('myCanvas');
         var ctx = canvas.getContext('2d');
-        ctx.clearRect(0,0,500,500);
-        ctx.drawImage(imageObj, 0, 0,500,500);
+        ctx.clearRect(0,0,xxx, yyy);
+        ctx.drawImage(imageObj, 0, 0);
 
 
         var imageData = ctx.getImageData(0, 0, imageObj.width, imageObj.height);
@@ -316,7 +318,7 @@ function drawImage(imageObj) {
 }
 
 function red() {
-        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var imageData = ctx.getImageData(0, 0, xxx, yyy);
         var dataArray = imageData.data;
 
 for(var i=0; i < dataArray.length; i+=4){
@@ -337,7 +339,7 @@ for(var i=0; i < dataArray.length; i+=4){
 }
 
 function green() {
-        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var imageData = ctx.getImageData(0, 0, xxx, yyy);
         var dataArray = imageData.data;
 
 for(var i=0; i < dataArray.length; i+=4){
@@ -358,7 +360,7 @@ for(var i=0; i < dataArray.length; i+=4){
 }
 
 function blue() {
-        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var imageData = ctx.getImageData(0, 0, xxx, yyy);
         var dataArray = imageData.data;
 
 for(var i=0; i < dataArray.length; i+=4){
@@ -379,7 +381,7 @@ for(var i=0; i < dataArray.length; i+=4){
 }
 
 function pb() {
-        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var imageData = ctx.getImageData(0, 0, xxx, yyy);
         var dataArray = imageData.data;
 
 for(var i=0; i < dataArray.length; i+=4){
@@ -400,7 +402,7 @@ for(var i=0; i < dataArray.length; i+=4){
 }
 
 function detect() {
-      var imageData = ctx.getImageData(0, 0, 500, 500);
+      var imageData = ctx.getImageData(0, 0, xxx, yyy);
       imageData = edge(imageData, ctx);
 
       ctx.putImageData(imageData, 0, 0);
@@ -412,7 +414,7 @@ function border() {
 }
 
 function sepia() {
-        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var imageData = ctx.getImageData(0, 0, xxx, yyy);
         var dataArray = imageData.data;
         for(var i=0; i<dataArray.length; i+= 4){
           var red = dataArray[i];
@@ -427,7 +429,7 @@ function sepia() {
 }
 
 function invert() {
-        var imageData = ctx.getImageData(0, 0, 500, 500);
+        var imageData = ctx.getImageData(0, 0, xxx, yyy);
         var data = imageData.data;
 
 for(var i = 0; i < data.length; i += 4) {
@@ -442,8 +444,9 @@ for(var i = 0; i < data.length; i += 4) {
 }
 
 
-function init(i){      
+function init(i,x,y){      
         var imageObj = new Image();
+        xxx=x; yyy=y;
         //imageObj.onload = function() {drawImage(this);};
         if (i == 1)      { imageObj.src="http://feoli7.github.io/imagens/0004.jpg"; } 
         else if (i == 2) { imageObj.src="http://feoli7.github.io/imagens/0008.jpg"; } 
