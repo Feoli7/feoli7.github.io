@@ -100,15 +100,14 @@ Released under the MIT license: http://jsbin.mit-license.org
 <tr>
 <td align="center" >
 <canvas id="canvas" width="600" height="300" style="border:5px solid #000000;"></canvas>
-<br><b>RANKING</b>
-<p id="rank"></p>
+<br>
+<h3 id="rank"></h3>
 </td>
 </tr>
 </table>
 </td>
 </tr>
 </table>
-
 </div>
 <div id="footer">
 Copyright © feoli7.github.io
@@ -119,7 +118,7 @@ $(document).ready(function(){
 
 	var scoreranking = localStorage.getItem('player');
 	if(scoreranking != null){
-    	document.getElementById("rank").innerHTML = "JOGADOR: "+ scoreranking +" PONTOS";}
+    	document.getElementById("rank").innerHTML = "RANKING MAIOR PONTUADOR: "+ scoreranking +" PONTOS)";}
     else{
     	document.getElementById("rank").innerHTML = "SEJA O MAIOR PONTUADOR";}
 
@@ -152,23 +151,23 @@ $(document).ready(function(){
 		//localStorage.clear();
 		var scoreranking = localStorage.getItem('player');
 		if(scoreranking != null){
-		if(placar>apenasNumeros(scoreranking)){	
+		if((placar>apenasNumeros(scoreranking))&&(placar>0)){	
     		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
    
 	    	if (person != null) {
-		    	localStorage.setItem('player', person+" - "+placar);
+		    	localStorage.setItem('player', person+" ("+placar);
                 var scoreranking = localStorage.getItem('player');
-		        document.getElementById("rank").innerHTML = "MAIOR PONTUADOR - JOGADOR: "+ scoreranking +" PONTOS";
+		        document.getElementById("rank").innerHTML = "RANKING MAIOR PONTUADOR: "+ scoreranking +" PONTOS)";
 			
 	    	}
         }}
-        else {
+        else if(placar>0){
         var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
    
 	    	if (person != null) {
-		    	localStorage.setItem('player', person+" - "+placar);
+		    	localStorage.setItem('player', person+" ("+placar);
                 var scoreranking = localStorage.getItem('player');
-		        document.getElementById("rank").innerHTML = "MAIOR PONTUADOR - JOGADOR: "+ scoreranking +" PONTOS";
+		        document.getElementById("rank").innerHTML = "RANKING MAIOR PONTUADOR: "+ scoreranking +" PONTOS)";
 			
 	    	}
 	    }
