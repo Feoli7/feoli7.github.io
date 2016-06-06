@@ -307,7 +307,7 @@ function edge(input, context) {
 function drawImage(imageObj) {
         var canvas = document.getElementById('myCanvas');
         var ctx = canvas.getContext('2d');
-        ctx.clearRect(0,0,15360,8640);
+        ctx.clearRect(0,0,500,500);
         ctx.drawImage(imageObj, 0, 0);
 
         var imageData = ctx.getImageData(0, 0, imageObj.width, imageObj.height);
@@ -317,7 +317,7 @@ function drawImage(imageObj) {
 }
 
 function red() {
-        var imageData = ctx.getImageData(0, 0, 15360, 500);
+        var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
 
 for(var i=0; i < dataArray.length; i+=4){
@@ -338,7 +338,7 @@ for(var i=0; i < dataArray.length; i+=4){
 }
 
 function green() {
-        var imageData = ctx.getImageData(0, 0, 15360, 8640);
+        var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
 
 for(var i=0; i < dataArray.length; i+=4){
@@ -359,7 +359,7 @@ for(var i=0; i < dataArray.length; i+=4){
 }
 
 function blue() {
-        var imageData = ctx.getImageData(0, 0, 15360, 8640);
+        var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
 
 for(var i=0; i < dataArray.length; i+=4){
@@ -380,7 +380,7 @@ for(var i=0; i < dataArray.length; i+=4){
 }
 
 function pb() {
-        var imageData = ctx.getImageData(0, 0, 15360, 8640);
+        var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
 
 for(var i=0; i < dataArray.length; i+=4){
@@ -401,7 +401,7 @@ for(var i=0; i < dataArray.length; i+=4){
 }
 
 function detect() {
-      var imageData = ctx.getImageData(0, 0, 15360, 8640);
+      var imageData = ctx.getImageData(0, 0, 500, 500);
       imageData = edge(imageData, ctx);
 
       ctx.putImageData(imageData, 0, 0);
@@ -413,7 +413,7 @@ function border() {
 }
 
 function sepia() {
-        var imageData = ctx.getImageData(0, 0, 15360, 8640);
+        var imageData = ctx.getImageData(0, 0, 500, 500);
         var dataArray = imageData.data;
         for(var i=0; i<dataArray.length; i+= 4){
           var red = dataArray[i];
@@ -428,7 +428,7 @@ function sepia() {
 }
 
 function invert() {
-        var imageData = ctx.getImageData(0, 0, 15360, 8640);
+        var imageData = ctx.getImageData(0, 0, 500, 500);
         var data = imageData.data;
 
 for(var i = 0; i < data.length; i += 4) {
