@@ -173,6 +173,13 @@ background: grey;
 <table width="1100" border="0" cellspacing="20"> 
 <tr>
 
+<p>Video to use:</p>
+<video id="video1" controls width="270" autoplay>
+  <source src="mov_bbb.mp4" type='video/mp4'>
+  <source src="mov_bbb.ogg" type='video/ogg'>
+  <source src="mov_bbb.webm" type='video/webm'>
+</video>
+
 <td align="top">
 <form name="teclado_virtual" >
   <span id="teclado" name="teclado"><p>
@@ -221,6 +228,19 @@ background: grey;
 <div id="footer">
 Copyright © feoli7.github.io
 </div>
+
+<script>
+
+var v = document.getElementById("video1");
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var i;
+
+v.addEventListener("play", function() {i = window.setInterval(function() {ctx.drawImage(v,5,5,260,125)},20);}, false);
+v.addEventListener("pause", function() {window.clearInterval(i);}, false);
+v.addEventListener("ended", function() {clearInterval(i);}, false); 
+ 
+</script>
   
 <script id="jsbin-javascript">
 var canvas = document.getElementById('myCanvas');
@@ -308,12 +328,12 @@ function drawImage(imageObj) {
         var canvas = document.getElementById('myCanvas');
         var ctx = canvas.getContext('2d');
         ctx.clearRect(0,0,500,500);
-        ctx.drawImage(imageObj, 0, 0, 500,500);
+        ctx.drawImage(imageObj, 0, 0);
 
         var imageData = ctx.getImageData(0, 0, imageObj.width, imageObj.height);
         var data = imageData.data;
 
-        ctx.putImageData(imageData, 0, 0, 500,500);
+        ctx.putImageData(imageData, 0, 0);
 }
 
 function red() {
