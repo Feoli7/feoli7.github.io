@@ -102,7 +102,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 <canvas id="canvas" width="600" height="300" style="border:5px solid #000000;"></canvas>
 </td>
 <td align="left" >
-<h2 align="justify"><img src="http://feoli7.github.io/imagens/trofeu_icon.jpg" width="40" height="40">&nbsp;&nbsp;&nbsp;RANKING</h2>
+<h2 align="justify"><img src="trofeu_icon.jpg" width="40" height="40">&nbsp;&nbsp;&nbsp;RANKING</h2>
 <h3 id="rank"></h3>
 </td>
 </tr>
@@ -307,6 +307,15 @@ $(document).ready(function(){
         var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
    
 	    	if (person != null) {
+		    	localStorage.setItem('p9', null);
+		    	localStorage.setItem('p8', null);
+		    	localStorage.setItem('p7', null);
+		    	localStorage.setItem('p6', null);
+		    	localStorage.setItem('p5', null);
+		    	localStorage.setItem('p4', null);
+		    	localStorage.setItem('p3', null);
+		    	localStorage.setItem('p2', null);
+		    	localStorage.setItem('p1', null);
 		    	localStorage.setItem('p0', person+" ("+placar);
                 var sp1 = localStorage.getItem('p0');
 	            rankinglist();
@@ -324,12 +333,12 @@ $(document).ready(function(){
 
 	function rankinglist() 
 	{   document.getElementById("rank").innerHTML = "";
-	    for(var i=0, len=localStorage.length; i<len; i++) {
+	    for(var i=0, len=10; i<len; i++) {
 					    var key = localStorage.key(i);
 					    var value = localStorage[key];
-					    	if(value == "null"){ value = "----- (0"; }
+					    	if(value == "null"){ value = "-------- (0"; }
 					    var pos = i+1;
-					    document.getElementById("rank").innerHTML += pos+"º - "+value+" PONTOS) <br> ";			
+					    document.getElementById("rank").innerHTML += pos+"º - "+value+" pts) <br> ";			
 					}
 	}
 	
