@@ -131,6 +131,32 @@ Copyright © feoli7.github.io
 <script language="JavaScript">
 
   var vid = document.getElementById("myVideo");
+
+  var tag = document.createElement('script');
+    //var d = new Date();
+  //var n = d.getTime();
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('myVideo', {
+          height: '400',
+          width: '640',
+          playerVars: {
+                    autoplay: 0,
+                    loop: 1,
+                    controls: 0,
+                    showinfo: 1,
+                    autohide: 1,
+                    modestbranding: 1,
+                    vq: 'hd1080'},
+      videoId:"s7L2PVdrb_8",
+      events: {'onStateChange': onPlayerStateChange}
+        });
+      }
+
   var pplay=0;
   var ppause=1;
   var timeplay = "--:--:--";
@@ -194,27 +220,45 @@ function timevol() {
 } 
 
   function play(){
-    vid.play();
+    player.playVideo();
     pplay=1;ppause=0;qtdplayed=qtdplayed+1;
     sgetSecs();
   }
 
   function pause(){
-    vid.pause();
+    player.pauseVideo();
     pplay=0;ppause=1;qtdpaused=qtdpaused+1;
     pgetSecs();
     
   }
 
   function volumenos(){
+    var som = player.getVolume();
+    player.setVolume(som-10);
     vid.volume = vid.volume-0.1;
     timevol();
   }
 
   function volumais(){
+    var som = player.getVolume();
+    player.setVolume(som+10);
     vid.volume = vid.volume+0.1;
     timevol();
   }
+
+  function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PAUSED) {
+            pause();
+        }
+
+        if (event.data == YT.PlayerState.PLAYING) {
+            play();
+        }
+
+        if (event.data == YT.PlayerState.ENDED) {
+            pause(); 
+        }
+    }
 
   function relatorio(){
     document.getElementById("relatorio").innerHTML = nl2br("Duração Assistido: "+timeplay+" \n Duração Parado: "+timepause+" \n Play Quantidade: "+qtdplayed+" vezes \n Pause Quantidade: "+qtdpaused+" vezes \n Volume Modificado: "+timevolume);
