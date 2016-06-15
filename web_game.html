@@ -100,7 +100,9 @@ Released under the MIT license: http://jsbin.mit-license.org
 <tr>
 <td align="center" >
 <canvas id="canvas" width="600" height="300" style="border:5px solid #000000;"></canvas>
-<br>
+</td>
+<td align="left" >
+<h2 align="justify"><img src="http://feoli7.github.io/imagens/trofeu_icon.jpg" width="40" height="40">&nbsp;&nbsp;&nbsp;RANKING</h2>
 <h3 id="rank"></h3>
 </td>
 </tr>
@@ -116,9 +118,11 @@ Copyright © feoli7.github.io
 <script id="jsbin-javascript">
 $(document).ready(function(){
 
-	var scoreranking = localStorage.getItem('player');
-	if(scoreranking != null){
-    	document.getElementById("rank").innerHTML = "RANKING MAIOR PONTUADOR: "+ scoreranking +" PONTOS)";}
+	var sp1 = localStorage.getItem('p0');
+	if(sp1 != null){
+    	rankinglist();
+    }
+				
     else{
     	document.getElementById("rank").innerHTML = "SEJA O MAIOR PONTUADOR";}
 
@@ -149,35 +153,185 @@ $(document).ready(function(){
     	
 	function ranking() {
 		//localStorage.clear();
-		var scoreranking = localStorage.getItem('player');
-		if(scoreranking != null){
-		if((placar>apenasNumeros(scoreranking))&&(placar>0)){	
-    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
-   
-	    	if (person != null) {
-		    	localStorage.setItem('player', person+" ("+placar);
-                var scoreranking = localStorage.getItem('player');
-		        document.getElementById("rank").innerHTML = "RANKING MAIOR PONTUADOR: "+ scoreranking +" PONTOS)";
-			
-	    	}
-        }}
+		var sp1 = localStorage.getItem('p0');
+		var sp2 = localStorage.getItem('p1');
+		var sp3 = localStorage.getItem('p2');
+		var sp4 = localStorage.getItem('p3');
+		var sp5 = localStorage.getItem('p4');
+		var sp6 = localStorage.getItem('p5');
+		var sp7 = localStorage.getItem('p6');
+		var sp8 = localStorage.getItem('p7');
+		var sp9 = localStorage.getItem('p8');
+		var sp10 = localStorage.getItem('p9');
+
+		if(sp1 != null){
+			if((placar>apenasNumeros(sp1))&&(placar>0)){//1 colocado;	
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', localStorage.getItem('p8'));
+		    		localStorage.setItem('p8', localStorage.getItem('p7'));
+		    		localStorage.setItem('p7', localStorage.getItem('p6'));
+		    		localStorage.setItem('p6', localStorage.getItem('p5'));
+		    		localStorage.setItem('p5', localStorage.getItem('p4'));
+		    		localStorage.setItem('p4', localStorage.getItem('p3'));
+		    		localStorage.setItem('p3', localStorage.getItem('p2'));
+		    		localStorage.setItem('p2', localStorage.getItem('p1'));
+		    		localStorage.setItem('p1', localStorage.getItem('p0'));
+			    	localStorage.setItem('p0', person+" ("+placar);
+	                var sp1 = localStorage.getItem('p0');
+			        rankinglist();
+				
+		    	}
+	        }else if((placar>apenasNumeros(sp2))&&(placar>0)){//2 colocado;
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', localStorage.getItem('p8'));
+		    		localStorage.setItem('p8', localStorage.getItem('p7'));
+		    		localStorage.setItem('p7', localStorage.getItem('p6'));
+		    		localStorage.setItem('p6', localStorage.getItem('p5'));
+		    		localStorage.setItem('p5', localStorage.getItem('p4'));
+		    		localStorage.setItem('p4', localStorage.getItem('p3'));
+		    		localStorage.setItem('p3', localStorage.getItem('p2'));
+		    		localStorage.setItem('p2', localStorage.getItem('p1'));
+			    	localStorage.setItem('p1', person+" ("+placar);
+	                var sp2 = localStorage.getItem('p1');
+			        rankinglist();
+				
+		    	}
+	        }else if((placar>apenasNumeros(sp3))&&(placar>0)){//3 colocado;
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', localStorage.getItem('p8'));
+		    		localStorage.setItem('p8', localStorage.getItem('p7'));
+		    		localStorage.setItem('p7', localStorage.getItem('p6'));
+		    		localStorage.setItem('p6', localStorage.getItem('p5'));
+		    		localStorage.setItem('p5', localStorage.getItem('p4'));
+		    		localStorage.setItem('p4', localStorage.getItem('p3'));
+		    		localStorage.setItem('p3', localStorage.getItem('p2'));
+			    	localStorage.setItem('p2', person+" ("+placar);
+	                var sp3 = localStorage.getItem('p2');
+			        rankinglist();
+				
+		    	}
+	        }else if((placar>apenasNumeros(sp4))&&(placar>0)){//4 colocado;
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', localStorage.getItem('p8'));
+		    		localStorage.setItem('p8', localStorage.getItem('p7'));
+		    		localStorage.setItem('p7', localStorage.getItem('p6'));
+		    		localStorage.setItem('p6', localStorage.getItem('p5'));
+		    		localStorage.setItem('p5', localStorage.getItem('p4'));
+		    		localStorage.setItem('p4', localStorage.getItem('p3'));
+			    	localStorage.setItem('p3', person+" ("+placar);
+	                var sp4 = localStorage.getItem('p3');
+			        rankinglist();
+				
+		    	}
+	        }else if((placar>apenasNumeros(sp5))&&(placar>0)){//5 colocado;
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', localStorage.getItem('p8'));
+		    		localStorage.setItem('p8', localStorage.getItem('p7'));
+		    		localStorage.setItem('p7', localStorage.getItem('p6'));
+		    		localStorage.setItem('p6', localStorage.getItem('p5'));
+		    		localStorage.setItem('p5', localStorage.getItem('p4'));
+			    	localStorage.setItem('p4', person+" ("+placar);
+	                var sp5 = localStorage.getItem('p4');
+			        rankinglist();
+				
+		    	}
+	        }else if((placar>apenasNumeros(sp6))&&(placar>0)){//6 colocado;
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', localStorage.getItem('p8'));
+		    		localStorage.setItem('p8', localStorage.getItem('p7'));
+		    		localStorage.setItem('p7', localStorage.getItem('p6'));
+		    		localStorage.setItem('p6', localStorage.getItem('p5'));
+			    	localStorage.setItem('p5', person+" ("+placar);
+	                var sp6 = localStorage.getItem('p5');
+			        rankinglist();
+				
+		    	}
+	        }else if((placar>apenasNumeros(sp7))&&(placar>0)){//7 colocado;
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', localStorage.getItem('p8'));
+		    		localStorage.setItem('p8', localStorage.getItem('p7'));
+		    		localStorage.setItem('p7', localStorage.getItem('p6'));
+			    	localStorage.setItem('p6', person+" ("+placar);
+	                var sp7 = localStorage.getItem('p6');
+			        rankinglist();
+				
+		    	}
+	        }else if((placar>apenasNumeros(sp8))&&(placar>0)){//8 colocado;
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', localStorage.getItem('p8'));
+		    		localStorage.setItem('p8', localStorage.getItem('p7'));
+			    	localStorage.setItem('p7', person+" ("+placar);
+	                var sp8 = localStorage.getItem('p7');
+			        rankinglist();
+				
+		    	}
+	        }else if((placar>apenasNumeros(sp9))&&(placar>0)){//9 colocado;
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', localStorage.getItem('p8'));
+		    		localStorage.setItem('p8', person+" ("+placar);
+	                var sp9 = localStorage.getItem('p8');
+			        rankinglist();
+				
+		    	}
+	        }else if((placar>apenasNumeros(sp10))&&(placar>0)){//10 colocado;
+	    		var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
+	   
+		    	if (person != null) {
+		    		localStorage.setItem('p9', person+" ("+placar);
+	                var sp10 = localStorage.getItem('p9');
+			        rankinglist();
+				
+		    	}
+	        }
+
+	    }
         else if(placar>0){
         var person = prompt("PARABÉNS!!! \nVocê fez "+placar+" pontos, insira o seu nome no Ranking!!!", "");
    
 	    	if (person != null) {
-		    	localStorage.setItem('player', person+" ("+placar);
-                var scoreranking = localStorage.getItem('player');
-		        document.getElementById("rank").innerHTML = "RANKING MAIOR PONTUADOR: "+ scoreranking +" PONTOS)";
-			
+		    	localStorage.setItem('p0', person+" ("+placar);
+                var sp1 = localStorage.getItem('p0');
+	            rankinglist();
 	    	}
 	    }
 	}
 
+
 	function apenasNumeros(string) 
-{
-    var numsStr = string.replace(/[^0-9]/g,'');
-    return parseInt(numsStr);
-}
+	{   if(string != null) {
+	        var numsStr = string.replace(/[^0-9]/g,'');
+	        return parseInt(numsStr);
+	    }else return 0;
+	}
+
+	function rankinglist() 
+	{   document.getElementById("rank").innerHTML = "";
+	    for(var i=0, len=localStorage.length; i<len; i++) {
+					    var key = localStorage.key(i);
+					    var value = localStorage[key];
+					    	if(value == "null"){ value = "----- (0"; }
+					    var pos = i+1;
+					    document.getElementById("rank").innerHTML += pos+"º - "+value+" PONTOS) <br> ";			
+					}
+	}
 	
 	//criar snake
 	function create_snake()
