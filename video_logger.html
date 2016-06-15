@@ -25,6 +25,21 @@ Released under the MIT license: http://jsbin.mit-license.org
     text-shadow: 5px 5px 5px grey;
 }
 
+#but_player{  width: 170px;
+      height: 40px;
+      font-size:17px;
+      text-align: justify-all;
+      font-weight: bold;
+      color: white;
+      background-color: #1C1B1C; 
+      border-radius: 12px;
+}
+#but_player:hover {
+  color: white;
+  background-color: #CC181E;
+  font-size:17px;
+  box-shadow: 5px 5px 5px grey;
+}
 
 #b1{  width: 200px;
       height: 50px;
@@ -101,16 +116,16 @@ Released under the MIT license: http://jsbin.mit-license.org
 <tr>
 <td align="center">
 <video style="width:700px;height:360px;" id="myVideo">
-    <source id="mp4" src="wind.mp4" type="video/mp4">
+    <source id="mp4" src="sintel-1024-surround.mp4" type="video/mp4">
 </video>
- <button id="but_play" style="line-height:20px;" onclick="play()"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
- <button id="but_pause" style="line-height:20px;" onclick="pause()"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAUSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
- <button id="but_pause" style="line-height:20px;" onclick="volumenos()"><b>&nbsp;&nbsp;&nbsp;VOLUME -&nbsp;&nbsp;&nbsp;</b></button>
- <button id="but_pause" style="line-height:20px;" onclick="volumais()"><b>&nbsp;&nbsp;&nbsp;VOLUME +&nbsp;&nbsp;&nbsp;</b></button><br><br>
+ <button id="but_player" style="line-height:20px;" onclick="play()"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLAY&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/play.png" width="20" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
+ <button id="but_player" style="line-height:20px;" onclick="pause()"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAUSE&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/pause.png" width="20" height="20">&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
+ <button id="but_player" style="line-height:20px;" onclick="volumenos()"><b>&nbsp;&nbsp;&nbsp;VOLUME&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/volmenos.png" width="20" height="20">&nbsp;&nbsp;</b></button>
+ <button id="but_player" style="line-height:20px;" onclick="volumais()"><b>&nbsp;&nbsp;&nbsp;VOLUME&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/volmais.png" width="20" height="20">&nbsp;&nbsp;</b></button><br><br>
 </td>
 <td align="center">
 <h3>APERTE O BOTÃO ABAIXO PARA EXIBIR O RELATÓRIO</h3>
- <button id="but_rel" style="line-height:20px;" onclick="relatorio()"><b>&nbsp;&nbsp;EXIBIR RELATÓRIO&nbsp;&nbsp;</b></button>
+ <button id="but_player" style="line-height:20px;" onclick="relatorio()"><b>&nbsp;&nbsp;RELATÓRIO&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/info.png" width="20" height="20">&nbsp;&nbsp;&nbsp;</b></button>
 <br>
 <h3 id="relatorio" class="relat">----------</h2>
 </td>
