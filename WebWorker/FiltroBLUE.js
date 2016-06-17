@@ -5,9 +5,9 @@
       var blue  = internoImg[i+2];
       var alpha = internoImg[i+3];
       var bw = (red + green + blue)/3;
-      internoImg[i] = 1*red;
+      internoImg[i] = 0*red;
       internoImg[i+1] = 0*green;
-      internoImg[i+2] = 0*blue;
+      internoImg[i+2] = 1*blue;
       internoImg[i+3] = 1*alpha; 
     }
 };
