@@ -15,79 +15,41 @@ Released under the MIT license: http://jsbin.mit-license.org
 
 <style id="jsbin-css">
 
-#teclas {
-border: 5px solid black;
-width: 480px;
-text-align: center;  
-background: grey;
-}
-
-#teclas ul {
-width: 400px;
-text-align: center;
-background: grey;
-}
-
-#teclas li {
+#teclas button {
 display: inline;
 text-align: center; 
 font-weight: bold;
 font-size: 12px;
 font-family: Verdana, Arial, Helvetica;
-border-radius: 40px;
+border-radius: 30px;
 border: 5px solid black;
 padding: 12px;
-line-height: 40px;
+line-height: 20px;
 margin: 5px;
 background: white
 }
 
-limg{
-display: inline;
-text-align: center; 
-font-weight: bold;
-font-size: 100px;
-font-family: Verdana, Arial, Helvetica;
-border-radius: 40px;
-border: 5px solid black;
-padding: 12px;
-line-height: 40px;
-margin: 5px;
-background: white
-}
-
-#teclas li.texto {
-color: black;
-}
-
-#teclas limg:hover {
-background: linear-gradient(red, green, blue);
-}
-
-#teclas li.red:hover {
+#teclas button.red:hover {
 background: red;
 }
 
-#teclas li.green:hover {
+#teclas button.green:hover {
 background: green;
 }
 
-#teclas li.blue:hover {
+#teclas button.blue:hover {
 background: blue;
 }
 
-#teclas li.pb:hover {
+#teclas button.pb:hover {
 color: white;
 background: black;
 }
 
-#teclas li.db:hover {
+#teclas button.bt:hover {
 background: grey;
 }
 
-#teclas li.ic:hover {
-background: grey;
-}
 
 #header {
     color: white;
@@ -126,7 +88,7 @@ background: grey;
 #nav {
     line-height:30px;
     background: linear-gradient(to top, black, white);
-    height:700px;
+    height:1000px;
     width:200px;
     float:left;
     padding:5px; 
@@ -170,43 +132,65 @@ background: grey;
 <table width="1100" border="0"> 
 <tr>
 <td><h1 id="menu1" class="menu1" align="justify">&nbsp;&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/ativ.png" width="50" height="50">&nbsp;&nbsp;&nbsp;ATIVIDADE - WEB FILTERS - WEB WORKERS</h1>
-<table width="1100" border="0" cellspacing="20"> 
+<table width="1100" border="5" bordercolor="black"> 
 <tr>
 
 <td align="center">
-<br><canvas id="myCanvas" width="500" height="500" style="border:5px solid #000000;"></canvas>
+<h3>IMAGEM 2K <h3>
+<img id="img1" src="img_2k_mini.jpg" width="384" height="216" border="5"><br>
+<div id="teclas">
+<button id="red"  onclick="location.href= 'http://feoli7.github.io/WebWorker/RED2K.html' " class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="green"  onclick="location.href= 'http://feoli7.github.io/WebWorker/GREEN2K.html' " class="green">&nbsp;&nbsp;&nbsp;&nbsp;GREEN&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="blue"  onclick="location.href= 'http://feoli7.github.io/WebWorker/BLUE2K.html' " class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BLUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<br>
+<button id="pb"  onclick="location.href= 'http://feoli7.github.io/WebWorker/PB2K.html' " class="pb">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="bt"  onclick="location.href= 'http://feoli7.github.io/WebWorker/SEPIA2K.html' " class="bt">&nbsp;&nbsp;&nbsp;&nbsp;SÉPIA&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="bt"  onclick="location.href= 'http://feoli7.github.io/WebWorker/INVERT2K.html' " class="bt">&nbsp;&nbsp;INVERTER&nbsp;&nbsp;</button>
+</div>
+</td>
+
+<td align="center" >
+<h3>IMAGEM 4K <h3>
+<img id="img1" src="img_4k_mini.jpg" width="384" height="216" border="5"><br>
+<div id="teclas">
+<button id="red"  onclick="location.href= 'http://feoli7.github.io/WebWorker/RED4K.html' " class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="green"  onclick="location.href= 'http://feoli7.github.io/WebWorker/GREEN4K.html' " class="green">&nbsp;&nbsp;&nbsp;&nbsp;GREEN&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="blue"  onclick="location.href= 'http://feoli7.github.io/WebWorker/BLUE4K.html' " class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BLUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<br>
+<button id="pb"  onclick="location.href= 'http://feoli7.github.io/WebWorker/PB4K.html' " class="pb">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="bt"  onclick="location.href= 'http://feoli7.github.io/WebWorker/SEPIA4K.html' " class="bt">&nbsp;&nbsp;&nbsp;&nbsp;SÉPIA&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="bt"  onclick="location.href= 'http://feoli7.github.io/WebWorker/INVERT4K.html' " class="bt">&nbsp;&nbsp;INVERTER&nbsp;&nbsp;</button>
+</div>
+</td>
+
+</tr>
+<tr>
+<td align="center">
+<h3>IMAGEM 8K <h3>
+<img id="img1" src="img_8k_mini.jpg" width="384" height="216" border="5">
+<div id="teclas">
+<button id="red"  onclick="location.href= 'http://feoli7.github.io/WebWorker/RED8K.html' " class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="green"  onclick="location.href= 'http://feoli7.github.io/WebWorker/GREEN8K.html' " class="green">&nbsp;&nbsp;&nbsp;&nbsp;GREEN&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="blue"  onclick="location.href= 'http://feoli7.github.io/WebWorker/BLUE8K.html' " class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BLUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<br>
+<button id="pb"  onclick="location.href= 'http://feoli7.github.io/WebWorker/PB8K.html' " class="pb">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="bt"  onclick="location.href= 'http://feoli7.github.io/WebWorker/SEPIA8K.html' " class="bt">&nbsp;&nbsp;&nbsp;&nbsp;SÉPIA&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="bt"  onclick="location.href= 'http://feoli7.github.io/WebWorker/INVERT8K.html' " class="bt">&nbsp;&nbsp;INVERTER&nbsp;&nbsp;</button>
+</div>
 </td>
 
 <td align="center">
-<form name="teclado_virtual" >
-  <span id="teclado" name="teclado"><p>
-   <div id="teclas"><br><br><br>
-    <ul>
-     <limg id="img1" onClick="init(1)" class="img"><img id="img1" src="http://feoli7.github.io/imagens/0004.jpg" width="80" height="80"></limg>
-     <limg id="img2" onClick="init(2)" class="img"><img id="img2" src="http://feoli7.github.io/imagens/0008.jpg" width="80" height="80"></limg>
-     <limg id="img3"  onClick="init(3)" class="img"><img src="http://feoli7.github.io/imagens/00016.jpg" width="80" height="80"></limg>
-     </ul><br><br><br>
-     <ul>
-     <limg id="img4"  onClick="init(4)" class="img"><img src="http://feoli7.github.io/imagens/004.png" width="80" height="80"></limg>
-     <limg id="img5"  onClick="init(5)" class="img"><img src="http://feoli7.github.io/imagens/005.png" width="80" height="80"></limg>
-     <limg id="img6"  onClick="init(6)" class="img"><img src="http://feoli7.github.io/imagens/006.png" width="80" height="80"></limg>
-     </ul>
-    <br>
-    <ul>
-     <li id="red"  onClick="red()" class="red">&nbsp;&nbsp;RED&nbsp;&nbsp;</li>
-     <li id="green"  onClick="green()" class="green">GREEN</li>
-     <li id="blue"  onClick="blue()" class="blue">&nbsp;BLUE&nbsp;</li>
-     <li id="pb"  onClick="pb()" class="pb">&nbsp;&nbsp;P&B&nbsp;&nbsp;</li>
-    </ul>  
-    <ul>
-     <li id="db"  onClick="border()" class="db">&nbsp;BORDAS&nbsp;</li>
-     <li id="ic"  onClick="sepia()" class="ic">&nbsp;&nbsp;SÉPIA&nbsp;&nbsp;</li>
-     <li id="ic"  onClick="invert()" class="ic">INVERTER</li>
-    </ul>
-    <br>
-   </div>
-  </span>
-  </form>
+<h3>IMAGEM 16K <h3>
+<img id="img1" src="img_16k_mini.jpg" width="384" height="216" border="5"><br>
+<div id="teclas">
+<button id="red"  onclick="location.href= 'http://feoli7.github.io/WebWorker/RED16K.html' " class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="green"  onclick="location.href= 'http://feoli7.github.io/WebWorker/GREEND16K.html' " class="green">&nbsp;&nbsp;&nbsp;&nbsp;GREEN&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="blue"  onclick="location.href= 'http://feoli7.github.io/WebWorker/BLUE16K.html' " class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BLUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<br>
+<button id="pb"  onclick="location.href= 'http://feoli7.github.io/WebWorker/PB16K.html' " class="pb">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="bt"  onclick="location.href= 'http://feoli7.github.io/WebWorker/SEPIA16K.html' " class="bt">&nbsp;&nbsp;&nbsp;&nbsp;SÉPIA&nbsp;&nbsp;&nbsp;&nbsp;</button>
+<button id="bt"  onclick="location.href= 'http://feoli7.github.io/WebWorker/INVERT16K.html' " class="bt">&nbsp;&nbsp;INVERTER&nbsp;&nbsp;</button>
+</div>
 </td>
 
 </tr>
@@ -219,7 +203,7 @@ background: grey;
 <div id="footer">
 Copyright © feoli7.github.io
 </div>
-
+  
 <script id="jsbin-javascript">
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
@@ -306,8 +290,7 @@ function drawImage(imageObj) {
         var canvas = document.getElementById('myCanvas');
         var ctx = canvas.getContext('2d');
         ctx.clearRect(0,0,500,500);
-        ctx.drawImage(imageObj, 0, 0, 500,500);
-
+        ctx.drawImage(imageObj, 0, 0);
 
         var imageData = ctx.getImageData(0, 0, imageObj.width, imageObj.height);
         var data = imageData.data;
@@ -445,9 +428,9 @@ for(var i = 0; i < data.length; i += 4) {
 function init(i){      
         var imageObj = new Image();
         //imageObj.onload = function() {drawImage(this);};
-        if (i == 1)      { imageObj.src="http://feoli7.github.io/imagens/0004.jpg"; } 
-        else if (i == 2) { imageObj.src="http://feoli7.github.io/imagens/0008.jpg"; } 
-        else if (i == 3) { imageObj.src="http://feoli7.github.io/imagens/00016.jpg"; } 
+        if (i == 1)      { imageObj.src="http://feoli7.github.io/imagens/001.png"; } 
+        else if (i == 2) { imageObj.src="http://feoli7.github.io/imagens/002.png"; } 
+        else if (i == 3) { imageObj.src="http://feoli7.github.io/imagens/003.png"; } 
         else if (i == 4) { imageObj.src="http://feoli7.github.io/imagens/004.png"; } 
         else if (i == 5) { imageObj.src="http://feoli7.github.io/imagens/005.png"; } 
         else if (i == 6) { imageObj.src="http://feoli7.github.io/imagens/006.png"; }
