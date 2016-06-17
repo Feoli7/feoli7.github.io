@@ -16,7 +16,7 @@
 
         tempContext.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-        var workersQtd = 2;
+        var workersQtd = 4;
         var finalizados = 0;
         var tamanhoSegmento = len / workersQtd;
         var tamanhoBloco = canvas.height / workersQtd;
