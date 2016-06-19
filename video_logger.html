@@ -118,8 +118,8 @@ Released under the MIT license: http://jsbin.mit-license.org
 <video style="width:700px;height:360px;" id="myVideo">
     <source id="mp4" src="sintel-1024-surround.mp4" type="video/mp4">
 </video>
- <button id="but_player" style="line-height:20px;" onclick="play()"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLAY&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/play.png" width="20" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
- <button id="but_player" style="line-height:20px;" onclick="pause()"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAUSE&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/pause.png" width="20" height="20">&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
+ <button id="but_player" style="line-height:20px;" onclick="play(1)"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLAY&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/play.png" width="20" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
+ <button id="but_player" style="line-height:20px;" onclick="pause(1)"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAUSE&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/pause.png" width="20" height="20">&nbsp;&nbsp;&nbsp;&nbsp;</b></button>
  <button id="but_player" style="line-height:20px;" onclick="volumenos()"><b>&nbsp;&nbsp;&nbsp;VOLUME&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/volmenos.png" width="20" height="20">&nbsp;&nbsp;</b></button>
  <button id="but_player" style="line-height:20px;" onclick="volumais()"><b>&nbsp;&nbsp;&nbsp;VOLUME&nbsp;&nbsp;<img src="http://feoli7.github.io/imagens/volmais.png" width="20" height="20">&nbsp;&nbsp;</b></button><br><br>
 </td>
@@ -234,15 +234,17 @@ function timevol() {
     timevolume = h + ":" + m + ":" + s;
 } 
 
-  function play(){
+  function play(n){
     player.playVideo();
-    pplay=1;ppause=0;qtdplayed=qtdplayed+1;
+    pplay=1;ppause=0;
+    qtdplayed=qtdplayed+1-n;
     sgetSecs();
   }
 
-  function pause(){
+  function pause(n){
     player.pauseVideo();
-    pplay=0;ppause=1;qtdpaused=qtdpaused+1;
+    pplay=0;ppause=1;
+    qtdpaused=qtdpaused+1-n;
     pgetSecs();
     
   }
@@ -263,15 +265,15 @@ function timevol() {
 
   function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PAUSED) {
-            pause();
+            pause(0);
         }
 
         if (event.data == YT.PlayerState.PLAYING) {
-            play();
+            play(0);
         }
 
         if (event.data == YT.PlayerState.ENDED) {
-            pause(); 
+            pause(0); 
         }
     }
 
